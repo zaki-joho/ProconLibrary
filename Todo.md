@@ -6,7 +6,7 @@
 
 ## Math
 
-FFT, NTT, garner, matrix, prime number, stern-brocot
+FFT, NTT, garner, matrix, prime number
 
 ## String
 
