@@ -2,7 +2,7 @@
 
 ## Contact
 
-Issue か Twitter(@zaki_joho)迄
+Issue か Twitter([@zaki_joho](https://twitter.com/zaki_joho))迄
 
 ## 命名規則
 
