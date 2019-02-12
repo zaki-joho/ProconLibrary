@@ -1,10 +1,11 @@
+#include "../bits/stdc++.h"
 // 奇数長回文のみ検出 O(|s|)
 // r[i] := s[i] を中心とする最長の回文半径
 // https://snuke.hatenablog.com/entry/2014/12/02/235837
-vector<int> manachar(const string &s)
+std::vector<int> manachar(const std::string &s)
 {
     int n = s.length();
-    vector<int> r(n);
+    std::vector<int> r(n);
     int i = 0, j = 0; // i:位置 j:長さ
     while (i < n)
     {

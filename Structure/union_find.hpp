@@ -1,8 +1,9 @@
+#include "../bits/stdc++.h"
 // 各連結成分内の要素数が取得できる UnionFind
 // verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3380552
 class UnionFind
 {
-    vector<int> data;
+    std::vector<int> data;
 
   public:
     UnionFind(int size) : data(size, -1) {}
@@ -13,7 +14,7 @@ class UnionFind
         if (x != y)
         {
             if (data[y] < data[x])
-                swap(x, y);
+                std::swap(x, y);
             data[x] += data[y];
             data[y] = x;
         }

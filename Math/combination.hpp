@@ -1,3 +1,4 @@
+#include "../bits/stdc++.h"
 const int MOD = 1e9 + 7;
 
 // a^b O(log b)
@@ -35,15 +36,15 @@ T H(T n, T k)
 
 // v[i][j] := iCj
 template<typename T>
-vector<vector<T>> comb2(T n, T r)
+std::vector<std::vector<T>> comb2(T n, T r)
 {
-    vector<vector<T>> v(n + 1, vector<T>(n + 1, 0));
-    for (int i = 0; i < v.size(); i++)
+    std::vector<std::vector<T>> v(n + 1, std::vector<T>(n + 1, 0));
+    for (int i = 0; i < (int)v.size(); i++)
     {
         v[i][0] = 1;
         v[i][i] = 1;
     }
-    for (int j = 1; j < v.size(); j++)
+    for (int j = 1; j < (int)v.size(); j++)
     {
         for (int k = 1; k < j; k++)
         {

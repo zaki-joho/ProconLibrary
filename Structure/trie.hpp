@@ -1,3 +1,4 @@
+#include "../bits/stdc++.h"
 // アルファベット26文字対応のTrie木
 // 機能拡張, 抽象化したい
 // verified: https://atcoder.jp/contests/tenka1-2016-final-open/submissions/3501370
@@ -8,9 +9,9 @@ struct Trie
     Trie()
     {
         val = 0;
-        fill(node, node + 26, (Trie *)0);
+        std::fill(node, node + 26, (Trie *)0);
     }
-    void insert(const string &s, int w)
+    void insert(const std::string &s, int w)
     {
         Trie *r = this;
         for (int i = 0; i < (int)s.length(); i++)

@@ -1,13 +1,14 @@
+#include "../bits/stdc++.h"
 // add edge していって　topologicalSort() でソート済みの列を返す
 // O(N)
 // verified: https://atcoder.jp/contests/nikkei2019-qual/submissions/4246223
 class TopologicalSort
 {
-    using Graph = vector<vector<int>>;
+    using Graph = std::vector<std::vector<int>>;
     // 頂点数
     int V;
-    vector<vector<int>> G;
-    void dfs(int v, vector<int> &res, vector<int> &used)
+    std::vector<std::vector<int>> G;
+    void dfs(int v, std::vector<int> &res, std::vector<int> &used)
     {
         used[v] = 1;
         for (auto to : G[v])
@@ -26,9 +27,9 @@ class TopologicalSort
         assert(0 <= b && b < V);
         G[a].push_back(b);
     }
-    vector<int> topologicalSort()
+    std::vector<int> topologicalSort()
     {
-        vector<int> ide(V);
+        std::vector<int> ide(V);
         for (int i = 0; i < V; i++)
         {
             for (auto to : G[i])
@@ -36,8 +37,8 @@ class TopologicalSort
                 ide[to]++;
             }
         }
-        vector<int> res;
-        vector<int> used(V);
+        std::vector<int> res;
+        std::vector<int> used(V);
         for (int i = V - 1; i >= 0; i--)
         {
             if (ide[i] == 0)

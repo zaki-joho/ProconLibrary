@@ -1,11 +1,12 @@
 // verified: https://csacademy.com/submission/2149615/
 #include "xor_shift.hpp"
+#include "../bits/stdc++.h"
 
 // 乱数でグラフの同型性判定
 // Hack 可能.
 class Isomorphism
 {
-    using Graph = vector<vector<int>>;
+    using Graph = std::vector<std::vector<int>>;
     using ll = long long;
     const int MOD = 1e9 + 7;
     int n;
@@ -13,7 +14,7 @@ class Isomorphism
     Graph graph;
     // rnd[i]   := 深さ i の頂点の乱数
     // hash[j]  := 頂点 j の乱数
-    vector<ll> rnd, hash;
+    std::vector<ll> rnd, hash;
     ll dfs(int cur, int pre, int dep)
     {
         int sz = graph[cur].size();

@@ -1,9 +1,10 @@
+#include "../bits/stdc++.h"
 // 重み付き UnionFind
 // verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3380602
 class WeightedUnionFind
 {
-    vector<int> par; // 親の番号
-    vector<int> ws;  // 親との重みの差
+    std::vector<int> par; // 親の番号
+    std::vector<int> ws;  // 親との重みの差
 
   public:
     WeightedUnionFind(int n) : par(n, -1), ws(n, 0) {}

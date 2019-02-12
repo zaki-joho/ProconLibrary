@@ -1,13 +1,14 @@
+#include "../bits/stdc++.h"
 // verified: https://codeforces.com/contest/1100/submission/49830281
 // O(|V| + |E|)
 class Scc
 {
-    using Graph = vector<vector<int>>;
+    using Graph = std::vector<std::vector<int>>;
     int V, K;
     Graph G, rG;
-    vector<int> vs;
-    vector<bool> used;
-    vector<int> cmp;
+    std::vector<int> vs;
+    std::vector<bool> used;
+    std::vector<int> cmp;
     void dfs(int cur)
     {
         used[cur] = true;
@@ -37,7 +38,7 @@ class Scc
         rG[to].push_back(from);
     }
     // SCCした後の頂点の対応関係(xor頂点数)を取得する
-    vector<int> scc()
+    std::vector<int> scc()
     {
         for (int i = 0; i < V; i++)
             used[i] = false;
@@ -64,7 +65,7 @@ class Scc
     Graph buildGraph()
     {
         scc();
-        vector<set<int>> s(K);
+        std::vector<std::set<int>> s(K);
         Graph ret(K);
         for (int v = 0; v < V; v++)
         {

@@ -1,3 +1,4 @@
+#include "../bits/stdc++.h"
 // 文字列S の各i に対し, S と S[i:|S|-1] の最長共通接頭辞を求める
 // https://snuke.hatenablog.com/entry/2014/12/03/214243
 // verified: https://atcoder.jp/contests/arc055/submissions/2711907
@@ -5,10 +6,10 @@
  * ex.  s = "aaabaaaab"
  * -> z[i]= "*21034210"
  */
-vector<int> z_algorithm(const string &s)
+std::vector<int> z_algorithm(const std::string &s)
 {
     int sz = s.length();
-    vector<int> z(sz, 0);
+    std::vector<int> z(sz, 0);
     int i = 1, j = 0;
     while (i < sz)
     {

@@ -1,12 +1,13 @@
+#include "../bits/stdc++.h"
 // グラフ, 根を引数として初期化
 // 蟻本準拠
 // varified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3215160
 class Lca
 {
   int n, log_n;
-  vector<vector<int>> parent;
-  vector<int> depth;
-  void dfs(const vector<vector<int>> &g, int v, int p, int d)
+  std::vector<std::vector<int>> parent;
+  std::vector<int> depth;
+  void dfs(const std::vector<std::vector<int>> &g, int v, int p, int d)
   {
     parent[0][v] = p;
     depth[v] = d;
@@ -18,11 +19,11 @@ class Lca
   }
 
 public:
-  Lca(const vector<vector<int>> &g, int root) : n((int)g.size()), log_n(0), depth(n, 0)
+  Lca(const std::vector<std::vector<int>> &g, int root) : n((int)g.size()), log_n(0), depth(n, 0)
   {
     for (int v = n; v > 0; v /= 2)
       log_n++;
-    parent.assign(log_n, vector<int>(n, 0));
+    parent.assign(log_n, std::vector<int>(n, 0));
     dfs(g, root, -1, 0);
     for (int k = 0; k < log_n - 1; k++)
     {
@@ -38,7 +39,7 @@ public:
   int query(int u, int v)
   {
     if (depth[u] > depth[v])
-      swap(u, v);
+      std::swap(u, v);
     for (int k = 0; k < log_n; k++)
     {
       if (((depth[v] - depth[u]) >> k) & 1)
