@@ -1,5 +1,9 @@
 # ProconLibrary
 
+## Contact
+
+Issue か Twitter(@zaki_joho)迄
+
 ## 命名規則
 
 ClassName
