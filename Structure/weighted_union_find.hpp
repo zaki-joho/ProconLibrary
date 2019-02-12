@@ -1,3 +1,4 @@
+#include "../bits/stdc++.h"
 // 重み付き UnionFind
 // verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3380602
 class WeightedUnionFind
