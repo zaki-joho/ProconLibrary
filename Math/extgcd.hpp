@@ -1,3 +1,12 @@
+// gcd(a, b)
+template<typename T>
+T gcd(T a, T b)
+{
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
+}
+
 // ax+by=gcd(x,y)となるx,yを求める
 // 返り値は gcd(a,b)
 template<typename T>
