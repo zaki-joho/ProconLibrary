@@ -2,7 +2,7 @@
 
 ## Graph
 
-2SAT, min cost flow, ford-fulkerson, minimum spanning arborescence, hungarian
+min cost flow, ford-fulkerson, minimum spanning arborescence, hungarian
 
 ## Math
 
@@ -10,7 +10,7 @@ FFT, NTT, garner, matrix, big integer
 
 ## String
 
-aho-corasick, suffix array
+suffix array
 
 ## Structure
 
