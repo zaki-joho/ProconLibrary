@@ -2,7 +2,7 @@
 
 ## Graph
 
-2SAT, min cost flow, ford-fulkerson, minimum spanning arborescence, hungarian
+2SAT, min cost flow, ford-fulkerson, minimum spanning arborescence, hungarian, low-link, bridge
 
 ## Math
 
