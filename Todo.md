@@ -6,7 +6,7 @@
 
 ## Math
 
-FFT, NTT, garner, matrix
+FFT, NTT, garner, matrix, big integer
 
 ## String
 
