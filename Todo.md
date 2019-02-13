@@ -2,15 +2,15 @@
 
 ## Graph
 
-minimum spanning arborescence, hungarian
+minimum spanning arborescence, hungarian, controid decomposition, HL decomposition
 
 ## Math
 
-FFT, NTT, garner, matrix, big integer
+FFT, NTT, garner, matrix, big integer, miller-rabin, lagrange-polynomial
 
 ## String
 
-suffix array
+suffix array, 2d rolling hash, kmp
 
 ## Structure
 
