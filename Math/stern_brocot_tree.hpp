@@ -8,7 +8,7 @@ using type = long long;
 type p, n;
 type u, v, x, y;
 
-void SternBrocot(type pl = 0, type ql = 1, type pr = 1, type qr = 0)
+void sternBrocot(type pl = 0, type ql = 1, type pr = 1, type qr = 0)
 {
     type pm = pl + pr, qm = ql + qr;
     if (pm > n || qm > n)
@@ -17,13 +17,13 @@ void SternBrocot(type pl = 0, type ql = 1, type pr = 1, type qr = 0)
     {
         x = pm;
         y = qm;
-        SternBrocot(pl, ql, pm, qm);
+        sternBrocot(pl, ql, pm, qm);
     }
     else if (p * (qm * qm) > pm * pm)
     {
         u = pm;
         v = qm;
-        SternBrocot(pm, qm, pr, qr);
+        sternBrocot(pm, qm, pr, qr);
     }
     return;
 }
