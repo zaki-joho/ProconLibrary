@@ -2,7 +2,7 @@
 
 ## Graph
 
-2SAT, dinic, ford-fulkerson, maximum independent set, minimum spanning tree, minimum spanning arborescence, hungarian
+2SAT, dinic, ford-fulkerson, minimum spanning arborescence, hungarian
 
 ## Math
 
