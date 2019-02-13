@@ -6,7 +6,7 @@
 
 ## Math
 
-FFT, NTT, garner, matrix, prime number
+FFT, NTT, garner, matrix
 
 ## String
 
