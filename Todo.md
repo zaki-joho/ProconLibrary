@@ -10,7 +10,7 @@ FFT, NTT, garner, matrix, big integer
 
 ## String
 
-rolling hash, aho-corasick, suffix array
+aho-corasick, suffix array
 
 ## Structure
 
