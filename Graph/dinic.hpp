@@ -1,7 +1,7 @@
 #include "../bits/stdc++.h"
 
 // 最大流(Dinic)
-// O(EV^2)
+// O(EV^2) (<=> Ford : O(FE))
 // verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3381606
 class Dinic
 {

@@ -1,8 +1,7 @@
 #include "../bits/stdc++.h"
-
 // 最小費用流
-// O(FElogV)?
-/*
+// O(FElogV)
+// verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3382347
 class minCostFlow
 {
     using type = int;
@@ -16,7 +15,12 @@ class minCostFlow
     };
     int V;
     std::vector<std::vector<Edge>> G;
-    std::vector<int> h, dist, prevv, preve;
+    // ポテンシャル
+    std::vector<int> h;
+    // 最短距離
+    std::vector<int> dist;
+    // 直前の頂点, 辺
+    std::vector<int> prevv, preve;
 
   public:
     minCostFlow(int _V) : V(_V), G(_V), h(_V), dist(_V), prevv(_V), preve(_V) {}
@@ -75,4 +79,3 @@ class minCostFlow
         return res;
     }
 };
-*/

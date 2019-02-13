@@ -2,7 +2,7 @@
 
 ## Graph
 
-min cost flow, ford-fulkerson, minimum spanning arborescence, hungarian
+minimum spanning arborescence, hungarian
 
 ## Math
 
