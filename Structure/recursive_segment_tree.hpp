@@ -9,6 +9,8 @@ class SegmentTree
     int n;
     const int INF = 2147483647;
     std::vector<int> node;
+
+  public:
     // v を基に初期化
     SegmentTree(const std::vector<int> &v)
     {
@@ -29,6 +31,17 @@ class SegmentTree
     {
         x += n - 1;
         node[x] = val;
+        while (x > 0)
+        {
+            x = (x - 1) / 2;
+            node[x] = M::op(node[2 * x + 1], node[2 * x + 2]);
+        }
+    }
+    // v[x] を M::op(v[x], val) に更新
+    void add(int x, int val)
+    {
+        x += n - 1;
+        node[x] = M::op(node[x], val);
         while (x > 0)
         {
             x = (x - 1) / 2;
