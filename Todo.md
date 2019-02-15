@@ -10,7 +10,7 @@ matrix, big integer, miller-rabin
 
 ## String
 
-2d rolling hash, kmp
+kmp
 
 ## Structure
 
