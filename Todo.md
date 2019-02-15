@@ -10,7 +10,7 @@ FFT, NTT, garner, matrix, big integer, miller-rabin, lagrange-polynomial
 
 ## String
 
-suffix array, 2d rolling hash, kmp
+2d rolling hash, kmp
 
 ## Structure
 
