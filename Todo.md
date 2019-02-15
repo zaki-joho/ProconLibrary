@@ -6,7 +6,7 @@ minimum spanning arborescence, hungarian, controid decomposition, HL decompositi
 
 ## Math
 
-garner, matrix, big integer, miller-rabin, lagrange-polynomial
+matrix, big integer, miller-rabin, lagrange-polynomial
 
 ## String
 
