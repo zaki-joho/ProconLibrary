@@ -6,7 +6,7 @@ minimum spanning arborescence, hungarian, controid decomposition, HL decompositi
 
 ## Math
 
-matrix, big integer, miller-rabin, lagrange-polynomial
+matrix, big integer, miller-rabin
 
 ## String
 
@@ -18,4 +18,4 @@ treap, monoid segment tree, binary trie
 
 ## Others
 
-convex hull trick, slide min, dp, mod integer
+convex hull trick, slide min, dp
