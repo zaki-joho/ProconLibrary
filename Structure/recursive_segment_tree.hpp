@@ -3,7 +3,8 @@
 // 点更新区間min 再帰セグ木 0-indexed
 // TODO: 非再帰, template
 // verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3380815
-struct SegmentTree
+template <typename M>
+class SegmentTree
 {
     int n;
     const int INF = 2147483647;
@@ -15,13 +16,13 @@ struct SegmentTree
         n = 1;
         while (n < int(v.size()))
             n *= 2;
-        node.resize(2 * n - 1, INF);
+        node.resize(2 * n - 1, M::id());
 
         // i の子 -> 2*i+1, 2*i+2 , 親 -> (i-1)/2
         for (int i = 0; i < int(v.size()); i++)
             node[i + n - 1] = v[i];
         for (int i = n - 2; i >= 0; i--)
-            node[i] = std::min(node[2 * i + 1], node[2 * i + 2]);
+            node[i] = M::op(node[2 * i + 1], node[2 * i + 2]);
     }
     // x 番目を val に更新
     void update(int x, int val)
@@ -31,22 +32,22 @@ struct SegmentTree
         while (x > 0)
         {
             x = (x - 1) / 2;
-            node[x] = std::min(node[2 * x + 1], node[2 * x + 2]);
+            node[x] = M::op(node[2 * x + 1], node[2 * x + 2]);
         }
     }
-    // [a, b) の min
+    // [a, b) の op
     // k := 今居るノード
     int query(int a, int b, int k = 0, int l = 0, int r = -1)
     {
         if (r < 0)
             r = n;
         if (r <= a || b <= l)
-            return INF;
+            return M::id();
         if (a <= l && r <= b)
             return node[k];
 
         int vl = query(a, b, 2 * k + 1, l, (l + r) / 2);
         int vr = query(a, b, 2 * k + 2, (l + r) / 2, r);
-        return std::min(vl, vr);
+        return M::op(vl, vr);
     }
 };
