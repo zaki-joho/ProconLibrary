@@ -18,4 +18,4 @@ treap, monoid segment tree, binary trie
 
 ## Others
 
-convex hull trick, slide min, dp
+convex hull trick, dp
