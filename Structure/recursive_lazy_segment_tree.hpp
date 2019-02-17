@@ -8,8 +8,10 @@ template <typename M>
 class LazySegmentTree
 {
     int n;
-    using T = typename M::t1;
-    std::vector<T> node, lazy;
+    using T1 = typename M::t1;
+    using T2 = typename M::t2;
+    std::vector<T1> node;
+    std::vector<T2> lazy;
     std::vector<bool> upd;
 
     void eval(int k, int l, int r)
@@ -28,7 +30,32 @@ class LazySegmentTree
     }
 
   public:
-    LazySegmentTree(std::vector<T> &v)
+    LazySegmentTree(int _n)
+    {
+        int sz = _n;
+        n = 1;
+        while (n < sz)
+            n *= 2;
+        node.resize(2 * n + 1, M::id1());
+        lazy.resize(2 * n + 1, M::id2());
+        upd.resize(2 * n + 1, false);
+    }
+    LazySegmentTree(int _n, T1 _v)
+    {
+        int sz = _n;
+        n = 1;
+        while (n < sz)
+            n *= 2;
+        node.resize(2 * n + 1, M::id1());
+        lazy.resize(2 * n + 1, M::id2());
+        upd.resize(2 * n + 1, false);
+
+        for (int i = 0; i < sz; i++)
+            node[i + n - 1] = _v;
+        for (int i = n - 2; i >= 0; i--)
+            node[i] = M::op1(node[i * 2 + 1], node[i * 2 + 2]);
+    }
+    LazySegmentTree(std::vector<T1> &v)
     {
         int sz = int(v.size());
         n = 1;
@@ -45,7 +72,7 @@ class LazySegmentTree
     }
 
     // 半開区間 [a, b) に対して値 val を反映させる
-    void update(int a, int b, T val, int l = 0, int r = -1, int k = 0)
+    void update(int a, int b, T2 val, int l = 0, int r = -1, int k = 0)
     {
         if (r < 0)
             r = n;
@@ -54,7 +81,7 @@ class LazySegmentTree
             return;
         if (a <= l && r <= b)
         {
-            lazy[k] = M::op2(lazy[k], val);
+            lazy[k] = M::op3(lazy[k], val);
             upd[k] = true;
             eval(k, l, r);
         }
@@ -68,7 +95,7 @@ class LazySegmentTree
     }
 
     // 半開区間 [a, b) に対してクエリを投げる
-    T query(int a, int b, int l = 0, int r = -1, int k = 0)
+    T1 query(int a, int b, int l = 0, int r = -1, int k = 0)
     {
         if (r < 0)
             r = n;
@@ -78,8 +105,8 @@ class LazySegmentTree
         if (a <= l && r <= b)
             return node[k];
         int mid = (l + r) / 2;
-        T vl = query(a, b, l, mid, 2 * k + 1);
-        T vr = query(a, b, mid, r, 2 * k + 2);
+        T1 vl = query(a, b, l, mid, 2 * k + 1);
+        T1 vr = query(a, b, mid, r, 2 * k + 2);
         return M::op1(vl, vr);
     }
 };

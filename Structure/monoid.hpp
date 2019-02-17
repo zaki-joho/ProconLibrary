@@ -47,7 +47,7 @@ struct RangeAddRangeSum
         t1(ll v, ll sz = 1) : val(v), size(sz) {}
     };
     using t2 = long long;
-    static t1 id1() { return 0; }
+    static t1 id1() { return t1(0,0); }
     static t2 id2() { return 0; }
     static t1 op1(const t1 &l, const t1 &r) { return t1(l.val + r.val, l.size + r.size); }
     static t1 op2(const t1 &l, const t2 &r) { return t1(l.val + l.size * r, l.size); }
@@ -81,7 +81,7 @@ struct RangeUpdateRangeSum
     static t2 op3(const t2 &l, const t2 &r) { return r != id2() ? r : l; }
 };
 
-struct RamgeUpdateRangeMinimum
+struct RangeUpdateRangeMinimum
 {
     using t1 = long long;
     using t2 = long long;
