@@ -40,23 +40,54 @@ struct QueryName
  */
 struct RangeAddRangeSum
 {
-    using t1 = long long;
+    using ll = long long;
+    struct t1
+    {
+        ll val, size;
+        t1(ll v, ll sz = 1) : val(v), size(sz) {}
+    };
     using t2 = long long;
     static t1 id1() { return 0; }
     static t2 id2() { return 0; }
-    static t1 op1(const t1 &l, const t1 &r) { return l + r; }
+    static t1 op1(const t1 &l, const t1 &r) { return t1(l.val + r.val, l.size + r.size); }
+    static t1 op2(const t1 &l, const t2 &r) { return t1(l.val + l.size * r, l.size); }
+    static t2 op3(const t2 &l, const t2 &r) { return l + r; }
+};
+
+struct RangeAddRangeMinimum
+{
+    using t1 = long long;
+    using t2 = long long;
+    static t1 id1() { return INT_MAX; }
+    static t2 id2() { return 0; }
+    static t1 op1(const t1 &l, const t1 &r) { return std::min(l, r); }
     static t1 op2(const t1 &l, const t2 &r) { return l + r; }
     static t2 op3(const t2 &l, const t2 &r) { return l + r; }
 };
-/*
+
+struct RangeUpdateRangeSum
+{
+    using ll = long long;
+    struct t1
+    {
+        ll val, size;
+        t1(ll v, ll sz = 1) : val(v), size(sz) {}
+    };
+    using t2 = long long;
+    static t1 id1() { return t1(0, 0); }
+    static t2 id2() { return -1; }
+    static t1 op1(const t1 &l, const t1 &r) { return t1(l.val + r.val, l.size + r.size); }
+    static t1 op2(const t1 &l, const t2 &r) { return t1(l.size * r, l.size); }
+    static t2 op3(const t2 &l, const t2 &r) { return r != id2() ? r : l; }
+};
+
 struct RamgeUpdateRangeMinimum
 {
-    using t1 = int;
-    using t2 = int;
+    using t1 = long long;
+    using t2 = long long;
     static t1 id1() { return INT_MAX; }
     static t2 id2() { return -1; }
     static t1 op1(const t1 &l, const t1 &r) { return std::min(l, r); }
     static t1 op2(const t1 &l, const t2 &r) { return r != id2() ? r : l; }
     static t2 op3(const t2 &l, const t2 &r) { return r != id2() ? r : l; }
 };
-*/
