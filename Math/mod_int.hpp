@@ -79,6 +79,22 @@ struct ModInt
 };
 
 template <int MOD>
+std::istream &operator>>(std::istream &is, ModInt<MOD> &val)
+{
+    long long x;
+    is >> x;
+    val = x;
+    return is;
+}
+
+template <int MOD>
+std::ostream &operator<<(std::ostream &os, ModInt<MOD> &val)
+{
+    os << val.val;
+    return os;
+}
+
+template <int MOD>
 ModInt<MOD> modPow(ModInt<MOD> a, ModInt<MOD> n)
 {
     ModInt<MOD> ret(1);
