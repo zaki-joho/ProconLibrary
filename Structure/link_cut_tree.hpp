@@ -2,12 +2,21 @@
 // Link-Cut Tree で常勝!!
 // https://www.slideshare.net/iwiwi/2-12188845
 // expose -> (link, cut, 頂点クエリ), (evert, 頂点更新), (辺クエリ, 更新)
-// expose(v): 頂点 v から根へのパスを繋げる O(logN)
 // 頂点クエリ sum(v): 頂点 v から根までの頂点に書かれている数の和 (min, max, etc...)
-// link, cut, verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3410190
-template <typename T = int>
+// 頂点更新: パス上の頂点全部に x 足す等
+// link, cut, 頂点クエリ verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3410233
+struct RangeSumQuery
+{
+    using type = int;
+    static type id() { return 0; }
+    static type op(const type &l, const type &r) { return l + r; }
+};
+
+template <typename Monoid>
 struct LinkCutTree
 {
+    using T = typename Monoid::type;
+
     struct Node
     {
         Node *l, *r, *p; // 左右の子, 親
@@ -31,13 +40,12 @@ struct LinkCutTree
 
     void update(Node *t)
     {
-        auto f = [](T a, T b) { return a + b; };
         t->sz = 1;
         t->sum = t->key;
         if (t->l)
-            t->sz += t->l->sz, t->sum = f(t->l->sum, t->sum);
+            t->sz += t->l->sz, t->sum = Monoid::op(t->l->sum, t->sum);
         if (t->r)
-            t->sz += t->r->sz, t->sum = f(t->sum, t->r->sum);
+            t->sz += t->r->sz, t->sum = Monoid::op(t->sum, t->r->sum);
     }
 
     // 右回転
@@ -127,6 +135,7 @@ struct LinkCutTree
         par->r = ch;
     }
 
+    // expose(v): 頂点 v から根へのパスを繋げる O(logN)
     Node *expose(Node *t)
     {
         Node *rp = nullptr;
