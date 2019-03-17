@@ -1,5 +1,6 @@
 #include "../bits/stdc++.h"
 // verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3384713
+// lcp verified: https://atcoder.jp/contests/kupc2016/submissions/4613878
 class SuffixArray
 {
     int n;
@@ -81,7 +82,7 @@ class SuffixArray
     std::vector<int> getLcp()
     {
         for (int i = 0; i <= n; i++)
-            rank[str[i]] = i;
+            rank[sa[i]] = i;
         int h = 0;
         std::vector<int> lcp(n + 1);
         for (int i = 0; i < n; i++)
