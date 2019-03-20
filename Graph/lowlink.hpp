@@ -48,7 +48,10 @@ class LowLink
     }
     std::set<P> bridge()
     {
+        // 連結であることを想定
         dfs(0, -1);
+        // 非連結の場合
+        // for(int i = 0;i < (int)order.size(); i++) if(order[i] == -1) dfs(i, -1);
         return bridges;
     }
 };
