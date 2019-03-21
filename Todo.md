@@ -14,7 +14,7 @@ kmp
 
 ## Structure
 
-treap, monoid segment tree, binary trie
+treap
 
 ## Others
 
