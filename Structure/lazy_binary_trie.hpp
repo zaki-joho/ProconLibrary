@@ -1,6 +1,6 @@
 #include "../bits/stdc++.h"
 // binary trie に対し, 全要素にある値を xor する操作を追加したもの
-// verifie してない: https://codeforces.com/contest/966/problem/C
+// verified: https://atcoder.jp/contests/dwacon5th-final-open/submissions/4650380
 class BinaryTrie
 {
     using T = unsigned;
