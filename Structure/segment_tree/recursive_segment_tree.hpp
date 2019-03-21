@@ -1,4 +1,5 @@
-#include "../bits/stdc++.h"
+#include "../../bits/stdc++.h"
+#include "monoid.hpp"
 // http://tsutaj.hatenablog.com/entry/2017/03/29/204841
 // 点更新区間min 再帰セグ木 0-indexed
 // TODO: 非再帰, template
