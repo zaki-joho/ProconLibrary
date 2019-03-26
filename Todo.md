@@ -2,7 +2,7 @@
 
 ## Graph
 
-minimum spanning arborescence, hungarian, controid decomposition, HL decomposition
+minimum spanning arborescence, hungarian, centroid decomposition, HL decomposition
 
 ## Math
 

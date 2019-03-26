@@ -1,7 +1,7 @@
 #include "../bits/stdc++.h"
-// 自動mod
+// 自動Mod
 // verified: https://atcoder.jp/contests/arc033/submissions/4271515
-template <int MOD>
+template <int Mod>
 struct ModInt
 {
     using type = long long;
@@ -9,31 +9,31 @@ struct ModInt
     ModInt() : val(0) {}
     ModInt(int _v) : val(_v)
     {
-        if (val >= MOD)
-            val %= MOD;
+        if (val >= Mod)
+            val %= Mod;
         else if (val < 0)
-            val = (val % MOD + MOD) % MOD;
+            val = (val % Mod + Mod) % Mod;
     }
 
     bool operator==(const ModInt &a) const { return val == a.val; }
     ModInt &operator+=(const ModInt &a)
     {
         val += a.val;
-        if (val >= MOD)
-            val -= MOD;
+        if (val >= Mod)
+            val -= Mod;
         return *this;
     }
     ModInt &operator-=(const ModInt &a)
     {
         val -= a.val;
         if (val < 0)
-            val += MOD;
+            val += Mod;
         return *this;
     }
     ModInt &operator*=(const ModInt &a)
     {
         val *= a.val;
-        val %= MOD;
+        val %= Mod;
         return *this;
     }
     ModInt &operator/=(ModInt &a)
@@ -63,9 +63,9 @@ struct ModInt
         return ModInt(*this) /= a;
     }
 
-    ModInt inv()
+    ModInt inv() const
     {
-        type a = val, b = MOD, u = 1, v = 0;
+        type a = val, b = Mod, u = 1, v = 0;
         while (b > 0)
         {
             type t = a / b;
@@ -78,8 +78,8 @@ struct ModInt
     }
 };
 
-template <int MOD>
-std::istream &operator>>(std::istream &is, ModInt<MOD> &val)
+template <int Mod>
+std::istream &operator>>(std::istream &is, ModInt<Mod> &val)
 {
     long long x;
     is >> x;
@@ -87,17 +87,17 @@ std::istream &operator>>(std::istream &is, ModInt<MOD> &val)
     return is;
 }
 
-template <int MOD>
-std::ostream &operator<<(std::ostream &os, ModInt<MOD> &val)
+template <int Mod>
+std::ostream &operator<<(std::ostream &os, ModInt<Mod> &val)
 {
     os << val.val;
     return os;
 }
 
-template <int MOD>
-ModInt<MOD> modPow(ModInt<MOD> a, ModInt<MOD> n)
+template <int Mod>
+ModInt<Mod> ModPow(ModInt<Mod> a, ModInt<Mod> n)
 {
-    ModInt<MOD> ret(1);
+    ModInt<Mod> ret(1);
     while (n.val)
     {
         if (n.val & 1)
