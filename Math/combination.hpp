@@ -15,30 +15,27 @@ T mypow(T a, T b)
 }
 
 // nCk O(n + klogMOD)
-template<typename T>
-T comb(T n, T k)
+long long comb(int n, int k)
 {
-    T res = 1;
-    k = min(n - k, k);
-    for (T i = n - k + 1; i <= n; i++)
+    long long res = 1;
+    k = std::min(n - k, k);
+    for (int i = n - k + 1; i <= n; i++)
         res = (res * i) % MOD;
-    for (T i = 1; i <= k; i++)
-        res = (res * mypow<T>(i, MOD - 2)) % MOD;
+    for (int i = 1; i <= k; i++)
+        res = (res * mypow(static_cast<long long>(i), static_cast<long long>(MOD - 2))) % MOD;
     return res;
 }
 
 // nHk = n+k-1 C k
-template<typename T>
-T H(T n, T k)
+long long H(int n, int k)
 {
     return comb(n + k - 1, k);
 }
 
 // v[i][j] := iCj
-template<typename T>
-std::vector<std::vector<T>> comb2(T n, T r)
+std::vector<std::vector<long long>> comb2(int n)
 {
-    std::vector<std::vector<T>> v(n + 1, std::vector<T>(n + 1, 0));
+    std::vector<std::vector<long long>> v(n + 1, std::vector<long long>(n + 1, 0));
     for (int i = 0; i < (int)v.size(); i++)
     {
         v[i][0] = 1;
