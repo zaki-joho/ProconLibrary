@@ -63,7 +63,7 @@ class SegmentTree
             node[x] = M::op(node[2 * x], node[2 * x + 1]);
         }
     }
-    // [a, b] の op
+    // [a, b) の op
     T query(int l, int r)
     {
         l += n;

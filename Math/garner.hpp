@@ -24,7 +24,7 @@ int mod_inv(ll a, ll m)
     return (u % m + m) % m;
 }
 
-ll garner(std::vector<ll> m, std::vector<ll> u, int mod)
+ll garner(std::vector<ll> m, std::vector<ll> u, ll mod)
 {
     const int n = m.size();
     std::vector<ll> inv(n);
