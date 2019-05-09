@@ -36,7 +36,7 @@ class LazySegmentTree
         while (n < sz)
             n *= 2;
         // 配列初期化
-        node.resize(2 * n - 1, 0);
+        node.resize(2 * n - 1, );
         lazy.resize(2 * n - 1, id2);
     }
     // 半開区間 [a, b) に対して値 val を反映させる
