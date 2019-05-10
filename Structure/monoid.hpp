@@ -1,5 +1,5 @@
 #include "../../bits/stdc++.h"
-// SegmentTree に載せるモノイド
+// SegmentTree / DisjointSparseTable に載せるモノイド
 struct RangeMinimumQuery
 {
     using type = int;
