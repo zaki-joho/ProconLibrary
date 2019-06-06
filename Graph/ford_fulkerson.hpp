@@ -2,7 +2,7 @@
 
 // 最大流(Ford Fulkerson)
 // O(FE)
-// verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3633122#1
+// verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3633122
 class FordFulkerson
 {
     using type = int;
@@ -10,9 +10,10 @@ class FordFulkerson
     struct Edge
     {
         // 行き先, 容量, 逆辺
-        int to, cap;
-        type rev;
-        Edge(int _t, int _c, type _r) : to(_t), cap(_c), rev(_r) {}
+        int to;
+        type cap;
+        int rev;
+        Edge(int _t, type _c, int _r) : to(_t), cap(_c), rev(_r) {}
     };
 
     using Graph = std::vector<std::vector<Edge>>;

@@ -2,21 +2,26 @@
 
 // 最大流(Dinic)
 // O(EV^2) (<=> Ford : O(FE))
-// verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3381606
+// verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3633135
 class Dinic
 {
     using type = int;
     const int INF = 1e9;
     struct Edge
     {
-        type to, cap, rev;
-        Edge(int _t, int _c, int _r) : to(_t), cap(_c), rev(_r) {}
+        // 行き先, 容量, 逆辺
+        int to;
+        type cap;
+        int rev;
+        Edge(int _t, type _c, int _r) : to(_t), cap(_c), rev(_r) {}
     };
 
     using Graph = std::vector<std::vector<Edge>>;
     int V;
     Graph G;
+    // s からの最短距離
     std::vector<int> level;
+    // 訪問済みか
     std::vector<int> iter;
 
     void bfs(int s)
@@ -39,6 +44,7 @@ class Dinic
             }
         }
     }
+    // 増加パスを探す
     type dfs(int v, int t, type f)
     {
         if (v == t)
@@ -62,7 +68,7 @@ class Dinic
 
   public:
     Dinic(int _v) : V(_v), G(_v), level(_v), iter(_v) {}
-    void add(int from, int to, int cap)
+    void add(int from, int to, type cap)
     {
         G[from].push_back(Edge{to, cap, (int)G[to].size()});
         G[to].push_back(Edge{from, 0, (int)G[from].size() - 1});
