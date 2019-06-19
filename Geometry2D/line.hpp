@@ -13,26 +13,27 @@ ld dot(Line l, Line m)
     return dot((l.a - l.b), (m.a - m.b));
 }
 
-// l, m が交点を持つか
+// l:line, m:line が交点を持つか
 bool isis_ll(Line l, Line m)
 {
     return !eq(cross(l.b - l.a, m.b - m.a), 0);
 }
 
-// s : segment
+// l:line, s:segment
 bool isis_ls(Line l, Line s)
 {
     return isis_ll(l, s) &&
            (cross(l.b - l.a, s.a - l.a) * cross(l.b - l.a, s.b - l.a) < eps);
 }
 
+// s:segment, t:segment
 bool isis_ss(Line s, Line t)
 {
     return ccw(s.a, s.b, t.a) * ccw(s.a, s.b, t.b) <= 0 &&
            ccw(t.a, t.b, s.a) * ccw(t.a, t.b, s.b) <= 0;
 }
 
-// p が l 上に存在するか
+// p が l:line 上に存在するか
 bool isis_lp(Line l, Point p)
 {
     return (abs(cross(l.b - p, l.a - p)) < eps);
@@ -50,7 +51,7 @@ Point proj(Line l, Point p)
     return l.a + t * (l.a - l.b);
 }
 
-// s, t の交点
+// l:line, t:line の交点
 Point is_ll(Line l, Line m)
 {
     Point lv = l.b - l.a, mv = m.b - m.a;
@@ -58,7 +59,7 @@ Point is_ll(Line l, Line m)
     return l.a + lv * cross(mv, m.a - l.a) / cross(mv, lv);
 }
 
-// p, l の距離
+// p, l:line の距離
 ld dist_lp(Line l, Point p)
 {
     return abs(p - proj(l, p));
