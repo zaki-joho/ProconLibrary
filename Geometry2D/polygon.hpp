@@ -43,6 +43,7 @@ int is_in_polygon(const Polygon &poly, Point p)
     return eq(angle, 0) ? 0 : 2;
 }
 
+// 凸包
 Polygon convex_hull(std::vector<Point> ps)
 {
     int n = ps.size();
@@ -59,6 +60,7 @@ Polygon convex_hull(std::vector<Point> ps)
     return ch;
 }
 
+// 凸包カット
 Polygon convex_cut(const Polygon &ps, Line l)
 {
     int n = ps.size();
