@@ -84,3 +84,5 @@ void add_point(std::vector<Point> &ps, Point p)
             return;
     ps.emplace_back(p);
 }
+
+// Voronoi 図: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3668775
