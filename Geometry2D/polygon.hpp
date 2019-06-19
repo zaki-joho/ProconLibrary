@@ -85,4 +85,18 @@ void add_point(std::vector<Point> &ps, Point p)
     ps.emplace_back(p);
 }
 
-// Voronoi 図: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3668775
+// Voronoi 図: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3668810
+// polygon を ps でボロノイ分割する時の ps[index] に割り当てられる多角形
+Polygon voronoi(const Polygon &polygon, const vector<Point> &ps, int index)
+{
+    Polygon p = polygon;
+    int n = ps.size();
+    for (int j = 0; j < n; j++)
+    {
+        if (index == j)
+            continue;
+        Line l = bisector(ps[index], ps[j]);
+        p = convex_cut(p, l);
+    }
+    return p;
+}
