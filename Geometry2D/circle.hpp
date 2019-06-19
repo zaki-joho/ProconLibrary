@@ -10,6 +10,7 @@ public:
 	Circle(Point p, ld r) : p(p), r(r) {}
 };
 
+// c1, c2 の交点
 std::vector<Point> is_cc(Circle c1, Circle c2)
 {
 	std::vector<Point> res;
@@ -51,6 +52,7 @@ std::vector<Point> is_sc(Circle c, Line l)
 	return res;
 }
 
+// p から c への接線
 std::vector<Line> tangent_cp(Circle c, Point p)
 {
 	std::vector<Line> ret;
@@ -70,6 +72,7 @@ std::vector<Line> tangent_cp(Circle c, Point p)
 	return ret;
 }
 
+// c1, c2 の共通接線
 std::vector<Line> tangent_cc(Circle c1, Circle c2)
 {
 	std::vector<Line> ret;
