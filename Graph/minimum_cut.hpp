@@ -1,6 +1,6 @@
 #include "../bits/stdc++.h"
 // Edge, Graph
-#include "./shortest_path.hpp"
+#include "./graph.hpp"
 /**
  * 全域最小カット(最大は NP-hard...)
  * Stort-Wagner/Nagamochi-Ibaraki
