@@ -4,34 +4,37 @@
 // verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3382347
 class minCostFlow
 {
-    using type = int;
-    using pii = std::pair<int, int>;
+    using capacity_type = int;
+    using cost_type = double;
+    using pii = std::pair<cost_type, int>;
     const int INF = 1e9;
     struct Edge
     {
-        type to, cap, cost, rev;
-        Edge(type to_, type cap_, type cost_, type rev_)
-            : to(to_), cap(cap_), cost(cost_), rev(rev_) {}
+        int to, rev;
+        capacity_type cap;
+        cost_type cost;
+        Edge(int to_, int _rev, capacity_type cap_, cost_type cost_)
+            : to(to_), rev(_rev), cap(cap_), cost(cost_) {}
     };
     int V;
     std::vector<std::vector<Edge>> G;
     // ポテンシャル
-    std::vector<int> h;
+    std::vector<cost_type> h;
     // 最短距離
-    std::vector<int> dist;
+    std::vector<cost_type> dist;
     // 直前の頂点, 辺
     std::vector<int> prevv, preve;
 
-  public:
+public:
     minCostFlow(int _V) : V(_V), G(_V), h(_V), dist(_V), prevv(_V), preve(_V) {}
-    void add(int from, int to, int cap, int cost)
+    void add(int from, int to, capacity_type cap, cost_type cost)
     {
-        G[from].push_back(Edge(to, cap, cost, G[to].size()));
-        G[to].push_back(Edge(from, 0, -cost, G[from].size() - 1));
+        G[from].push_back(Edge(to, G[to].size(), cap, cost));
+        G[to].push_back(Edge(from, G[from].size() - 1, 0, -cost));
     }
-    int calc(int s, int t, int f)
+    cost_type calc(int s, int t, int f)
     {
-        int res = 0;
+        cost_type res = 0;
         fill(h.begin(), h.end(), 0);
         while (f > 0)
         {
@@ -62,7 +65,7 @@ class minCostFlow
                 return -1;
             for (int v = 0; v < V; v++)
                 h[v] += dist[v];
-            int d = f;
+            capacity_type d = f;
             for (int v = t; v != s; v = prevv[v])
             {
                 d = std::min(d, G[prevv[v]][preve[v]].cap);
