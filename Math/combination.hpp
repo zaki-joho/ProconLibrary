@@ -51,3 +51,25 @@ std::vector<std::vector<long long>> comb2(int n)
     }
     return v;
 }
+
+long long comb3(int n, int k)
+{
+    static bool initiated = false;
+    static std::vector<long long > fact(200010, 1), inv(200010, 1);
+    if (!initiated)
+    {
+        initiated = true;
+        for (int i = 2; i <= 200000; i++)
+        {
+            fact[i] = fact[i - 1] * i % MOD;
+            inv[i] = mypow(fact[i], (long long)MOD - 2);
+        }
+    }
+    if (k < 0 || n < k)
+    {
+        return 0;
+    }
+    long long ret = fact[n] * inv[k] % MOD;
+    ret = ret * inv[n - k] % MOD;
+    return ret;
+}
