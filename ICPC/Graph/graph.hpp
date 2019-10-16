@@ -11,9 +11,4 @@ struct Edge {
 using Edges = std::vector<Edge>;
 using Graph = std::vector<Edges>;
 using P = std::pair<int, int>;
-constexpr int INF = 1e9;
 
-// 逆順にしているので注意
-bool operator<(const Edge &e, const Edge &f) {
-    return e.cost > f.cost;
-}
