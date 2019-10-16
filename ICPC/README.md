@@ -1,7 +1,41 @@
 ﻿# ICPC Library
 
+## Purpose
 
 ここにチームライブラリを置く
+
+## Index
+
+- Gemetry
+    + geometry.hpp
+    + intersect.hpp
+    + convex.hpp
+- Graph
+    + graph.hpp
+    + dijkstra.hpp
+    + bellman_ford.hpp
+    + scc.hpp
+    + articulation_points.hpp
+    + bridges.hpp
+    + lca.hpp
+    + ford_fullkerson.hpp
+    + dinic.hpp
+    + min_cost_flow.hpp
+- Math
+    + fft.cpp
+- String
+    + z_algorithm.hpp
+    + mp.hpp
+    + aho_corasick.hpp
+- Structure
+    + union_find.hpp
+    + bit.hpp
+    + segment_tree.hpp
+    + lazy_segment_tree.hpp
+- Others
+    + memo.txt
+
+## Usage
 
 1. ICPC/ 以下の対応する場所にソースコード書く
 2. ICPC/Tex/src/ 以下の対応する .tex ファイルを更新する
