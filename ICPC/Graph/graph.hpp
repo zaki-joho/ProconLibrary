@@ -1,7 +1,4 @@
-#include "../bits/stdc++.h"
-
-// グラフ基本要素
-// For shortest_path, minimum_spanning_tree
+#include<vector>
 
 struct Edge {
     int from, to, cost;
@@ -10,5 +7,3 @@ struct Edge {
 
 using Edges = std::vector<Edge>;
 using Graph = std::vector<Edges>;
-using P = std::pair<int, int>;
-
