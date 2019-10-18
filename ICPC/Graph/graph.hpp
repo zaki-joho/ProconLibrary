@@ -2,7 +2,8 @@
 
 using cost_t=int;
 struct Edge {
-    int from, to, cost;
+    int from, to;
+    cost_t cost;
     Edge(int from, int to, cost_t cost) : from(from), to(to), cost(cost) {}
 };
 
