@@ -1,5 +1,5 @@
 #/bin/bash
-for file in `find|grep .hpp`
+for file in `find|grep -E "\.(c|h)pp$"`
 do
     echo compiling $file
     if ! g++ -std=c++14 -c $file -o /dev/null ; then
