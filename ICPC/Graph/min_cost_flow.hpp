@@ -15,7 +15,7 @@ struct MinCostFlow{
         g[to].push_back((Edge){from,0,-cost,(int)g[from].size()-1});
     }
 
-    int minCostFlow(int s,int t,int f){
+    int run(int s,int t,int f){
         int res = 0;
         while(f>0){
             using Item=pair<long long,int>;

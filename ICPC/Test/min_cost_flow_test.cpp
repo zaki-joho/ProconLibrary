@@ -1,3 +1,4 @@
+// verified (http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_6_B)
 #include<bits/stdc++.h>
 using namespace std;
 #include"../Graph/min_cost_flow.hpp"
@@ -11,7 +12,7 @@ int main(){
         cin>>u>>v>>c>>d;
         mcf.add_edge(u,v,c,d);
     }
-    int ret = mcf.minCostFlow(0,V-1,F);
+    int ret = mcf.run(0,V-1,F);
     cout<<ret<<endl;
     return 0;
 }

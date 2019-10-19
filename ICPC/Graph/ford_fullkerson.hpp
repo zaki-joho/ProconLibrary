@@ -29,7 +29,7 @@ struct FordFullkerson{
         return 0;
     }
 
-    int max_flow(int s,int t){
+    int run(int s,int t){
         int flow=0,f;
         while(true){
             fill(used.begin(),used.end(),false);
