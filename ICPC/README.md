@@ -6,7 +6,7 @@
 
 ## Index
 
-- Gemetry
+- Geometry
     + geometry.hpp
     + intersect.hpp
     + convex.hpp
@@ -14,6 +14,7 @@
     + graph.hpp
     + dijkstra.hpp
     + bellman_ford.hpp
+    + spfa.hpp
     + scc.hpp
     + articulation_points.hpp
     + bridges.hpp
@@ -21,19 +22,33 @@
     + ford_fullkerson.hpp
     + dinic.hpp
     + min_cost_flow.hpp
+    + minimum_spanning_tree.hpp
+    + maximum_independent_set.hpp
 - Math
     + fft.cpp
+    + matrix.hpp
+    + crt.hpp
+    + polynomial_lagrange.hpp
 - String
     + z_algorithm.hpp
     + mp.hpp
     + aho_corasick.hpp
+    + suffix_array.hpp
+    + rolling_hash.hpp
 - Structure
     + union_find.hpp
     + bit.hpp
     + segment_tree.hpp
     + lazy_segment_tree.hpp
+    + trie.hpp
+    + skew_heap.hpp
 - Others
     + memo.txt
+- pending
+    + minimum_cut.hpp
+    + heavy_light_decomposition.hpp
+    + two_sat.hpp
+    + slide_min.hpp
 
 ## Usage
 
