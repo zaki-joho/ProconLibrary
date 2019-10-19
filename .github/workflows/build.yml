@@ -1,0 +1,10 @@
+name: check
+on: push
+jobs:
+  compile:
+    name: compile
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1.0.0
+      - run: g++ --version
+      - run: cd ICPC/ && bash script/compile.sh
