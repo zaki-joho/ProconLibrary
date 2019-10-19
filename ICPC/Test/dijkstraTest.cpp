@@ -1,3 +1,6 @@
+//verify http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp
+#include<bits/stdc++.h>
+using namespace std;
 #include"../Graph/dijkstra.hpp"
 
 int main(){
