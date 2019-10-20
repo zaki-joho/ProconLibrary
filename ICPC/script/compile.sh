@@ -2,7 +2,7 @@
 for file in `find | grep .hpp`
 do
     echo compiling $file
-    if ! g++ -std=c++14 -c $file -o /dev/null ; then
+    if ! g++ -std=c++14 -Wall -Wextra -c $file -o /dev/null ; then
         echo compile error on $file
         exit -1
     fi
