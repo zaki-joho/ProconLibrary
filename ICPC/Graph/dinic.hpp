@@ -2,15 +2,16 @@
 using namespace std;
 
 struct Dinic{
-    const int INF=1e9;
-    struct Edge{int to,cap,rev;};
+    using flow_t = int;
+    const flow_t INF = 1e9;
+    struct Edge{int to; flow_t cap; int rev;};
     int n;
     vector<vector<Edge>> g;
     vector<int> iter,level;
 
     Dinic(int n):n(n),g(n),level(n),iter(n){}
 
-    void add_edge(int from,int to,int cap){
+    void add_edge(int from,int to,flow_t cap){
         g[from].push_back(Edge{to,cap,(int)g[to].size()});
         g[to].push_back(Edge{from,0,(int)g[from].size()});
     }
@@ -30,12 +31,12 @@ struct Dinic{
         }
     }
 
-    int dfs(int v,int t,int f){
+    flow_t dfs(int v,int t,flow_t f){
         if(v == t) return f;
         for(int&i = iter[v]; i < (int) g[v].size(); i++){
             Edge& e = g[v][i];
             if(e.cap>0 && level[v]<level[e.to]){
-                int d = dfs(e.to, t, min(f,e.cap));
+                flow_t d = dfs(e.to, t, min(f,e.cap));
                 if(d>0) {
                     e.cap-= d;
                     g[e.to][e.rev].cap += d;
@@ -46,8 +47,8 @@ struct Dinic{
         return 0;
     }
 
-    int run(int s,int t){
-        int ret = 0,f;
+    flow_t run(int s,int t){
+        flow_t ret = 0,f;
         while(bfs(s),level[t]>=0){
             fill(begin(iter),end(iter),0);
             while((f=dfs(s,t,INF))>0) ret += f;

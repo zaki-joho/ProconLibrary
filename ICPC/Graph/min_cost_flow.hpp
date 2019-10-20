@@ -2,23 +2,26 @@
 using namespace std;
 
 struct MinCostFlow{
+    using flow_t = int;
+    using cost_t = int;
     const int INF=1e9;
-    struct Edge{int to,cap,cost,rev;};
+    struct Edge{int to; flow_t cap; cost_t cost,rev;};
     vector<vector<Edge>> g;
-    vector<int> h,dist,prevv,preve;
+    vector<cost_t> h,dist;
+    vector<int> prevv,preve;
     int n;
 
     MinCostFlow(int n):n(n),g(n),h(n),dist(n),prevv(n),preve(n){}
 
-    void add_edge(int from,int to,int cap,int cost){
+    void add_edge(int from,int to,flow_t cap,cost_t cost){
         g[from].push_back((Edge){to,cap,cost,(int)g[to].size()});
         g[to].push_back((Edge){from,0,-cost,(int)g[from].size()-1});
     }
 
-    int run(int s,int t,int f){
-        int res = 0;
+    cost_t run(int s,int t,flow_t f){
+        cost_t res = 0;
         while(f>0){
-            using Item=pair<long long,int>;
+            using Item=pair<cost_t,int>;
             priority_queue<Item,vector<Item>,greater<>> que;
             fill(begin(dist),end(dist),INF);
             dist[s] = 0;
@@ -29,7 +32,7 @@ struct MinCostFlow{
                 if(dist[v]<tmp.first) continue;
                 for(int i=0;i<g[v].size();i++){
                     Edge& e=g[v][i];
-                    int d = dist[v]+e.cost+h[v]-h[e.to];
+                    cost_t d = dist[v]+e.cost+h[v]-h[e.to];
                     if(e.cap>0 && dist[e.to]>d){
                         dist[e.to] = d;
                         prevv[e.to] = v;
@@ -41,7 +44,7 @@ struct MinCostFlow{
 
             if(dist[t]==INF) return -1;
             for(int i=0;i<n;i++) h[i]+=dist[i];
-            int d = f;
+            flow_t d = f;
             for(int v=t;v!=s;v=prevv[v]){
                 d=min(d,g[prevv[v]][preve[v]].cap);
             }
