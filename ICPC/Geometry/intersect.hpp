@@ -170,7 +170,7 @@ std::vector<Line> tangent_cc(Circle c1, Circle c2)
 	{
 		Point out = (-c1.p * c2.r + c2.p * c1.r) / (c1.r - c2.r);
 		std::vector<Line> nret = tangent_cp(c1, out);
-		ret.emplace(ret.end(), nret.begin(), nret.end());
+		ret.insert(ret.end(), nret.begin(), nret.end());
 	}
 	else
 	{

@@ -25,9 +25,9 @@ bool is_counter_clockwise(const Polygon &poly)
     return angle > eps;
 }
 
-// -1 => out
-//  0 => on
-//  1 => in
+// 0 => out
+// 1 => on
+// 2 => in
 int is_in_polygon(const Polygon &poly, Point p)
 {
     ld angle = 0;

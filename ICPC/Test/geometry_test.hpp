@@ -1,4 +1,4 @@
-#include "../bits/stdc++.h"
+#include "bits/stdc++.h"
 
 using namespace std;
 
@@ -259,7 +259,7 @@ std::vector<Line> tangent_cc(Circle c1, Circle c2)
     {
         Point out = (-c1.p * c2.r + c2.p * c1.r) / (c1.r - c2.r);
         std::vector<Line> nret = tangent_cp(c1, out);
-        ret.emplace(ret.end(), nret.begin(), nret.end());
+        ret.insert(ret.end(), nret.begin(), nret.end());
     }
     else
     {
@@ -298,9 +298,9 @@ bool is_counter_clockwise(const Polygon &poly)
     return angle > eps;
 }
 
-// -1 => out
-//  0 => on
-//  1 => in
+// 0 => out
+// 1 => on
+// 2 => in
 int is_in_polygon(const Polygon &poly, Point p)
 {
     ld angle = 0;
@@ -503,7 +503,7 @@ void solve_cgl_3_b()
         p.push_back(input_point());
     }
     auto cv = convex_hull(p);
-    cout << (p == cv ? 1 : 0) << endl;
+    cout << (eq(area(p), area(cv)) ? 1 : 0) << endl;
 }
 
 void solve_cgl_3_c()
@@ -521,7 +521,7 @@ void solve_cgl_3_c()
     {
         auto p = input_point();
         int ret = is_in_polygon(ps, p);
-        cout << ret + 1 << endl;
+        cout << ret << endl;
     }
 }
 
@@ -535,9 +535,10 @@ void solve_cgl_4_a()
         ps.push_back(input_point());
     }
     auto ret = convex_hull(ps);
+    cout << ret.size() << endl;
     for (auto p : ret)
     {
-        cout << fixed << setprecision(10) << p.real() << " " << p.imag() << endl;
+        cout << (int)p.real() << " " << (int)p.imag() << endl;
     }
 }
 
@@ -587,6 +588,7 @@ void solve_cgl_7_d()
     Circle c(p, r);
     int q;
     cin >> q;
+    cout << fixed << setprecision(10);
     while (q--)
     {
         auto p0 = input_point(), p1 = input_point();
@@ -615,6 +617,7 @@ void solve_cgl_7_e()
     if ((int)ret.size() == 1)
         ret.push_back(ret[0]);
     sort(ret.begin(), ret.end());
+    cout << fixed << setprecision(10);
     cout << ret[0].real() << " " << ret[0].imag() << " " << ret[1].real() << " " << ret[1].imag() << endl;
 }
 
@@ -630,10 +633,11 @@ void solve_cgl_7_f()
     for (auto l : ls)
     {
         auto ps = is_lc(c, l);
-        assert((int)ps.size() == 1);
+        //assert((int)ps.size() == 1);
         ret.push_back(ps[0]);
     }
     sort(ret.begin(), ret.end());
+    cout << fixed << setprecision(10);
     cout << ret[0].real() << " " << ret[0].imag() << " " << ret[1].real() << " " << ret[1].imag() << endl;
 }
 
@@ -650,7 +654,7 @@ void solve_cgl_7_g()
     for (auto l : ls)
     {
         auto ps = is_sc(c0, l);
-        assert((int)ps.size() == 1);
+        //assert((int)ps.size() == 1);
         ret.push_back(ps[0]);
     }
     sort(ret.begin(), ret.end());
@@ -667,6 +671,4 @@ int main()
 {
     cin.tie(0);
     ios::sync_with_stdio(false);
-
-    solve_cgl_1_a();
 }
