@@ -6,7 +6,6 @@ cost_t mst(Graph& g){
     using Item=pair<cost_t,int>;
     priority_queue<Item,vector<Item>,greater<>> que;
     que.push(Item(0,0));
-    int cnt=0;
     vector<int> used(n);
     while(!que.empty()){
         auto tmp=que.top(); que.pop();
