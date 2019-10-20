@@ -1,7 +1,7 @@
 // verified (http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A)
 #include<bits/stdc++.h>
 using namespace std;
-#include"../Graph/mst.cpp"
+#include"../Graph/mst.hpp"
 
 int main(){
     int V,E;
