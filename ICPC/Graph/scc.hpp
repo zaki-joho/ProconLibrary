@@ -1,3 +1,4 @@
+// verified(http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_C)
 #include"graph.hpp"
 
 int scc(Graph &g,vector<int>& cmp){
