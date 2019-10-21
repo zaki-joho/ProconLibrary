@@ -16,28 +16,29 @@ Polygon voronoi(const Polygon &polygon, const std::vector<Point> &ps, int index)
     return p;
 }
 
-// 凸多角形の直径（最遠点対）, インデックスのペアを返す, O(n)
-std::pair<int, int> convexDiameter(const Polygon &ps)
+// 凸多角形の直径（最遠点対）, O(n)
+ld convexDiameter(const Polygon &ps)
 {
     int n = ps.size();
     int i = min_element(ps.begin(), ps.end()) - ps.begin();
     int j = max_element(ps.begin(), ps.end()) - ps.begin();
-    int reti = i, retj = j;
+    // int reti = i, retj = j;
     ld d = 0;
     for (int k = 0; k < 2 * n; k++)
     {
         if (d < norm(ps[i] - ps[j]))
         {
             d = norm(ps[i] - ps[j]);
-            reti = i;
-            retj = j;
+            // reti = i;
+            // retj = j;
         }
         if (cross(ps[i] - ps[(i + 1) % n], ps[(j + 1) % n] - ps[j]) <= 0)
             j = (j + 1) % n;
         else
             i = (i + 1) % n;
     }
-    return std::make_pair(reti, retj);
+    return d;
+    // return std::make_pair(reti, retj);
 }
 
 // 多角形の幾何学的重心 unverified
@@ -82,7 +83,7 @@ ld closestPair(Point *a, int n)
             ld dy = a[i].imag() - b[int(b.size()) - j - 1].imag();
             if (dy >= d)
                 break;
-            d = std::min(d, sqrt(dx * dx + dy * dy));
+            d = std::min(d, (ld)sqrt(dx * dx + dy * dy));
         }
         b.push_back(a[i]);
     }
