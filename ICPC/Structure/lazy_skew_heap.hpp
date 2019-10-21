@@ -34,10 +34,10 @@ private:
             return a;
         // min Heap
         if (a->val + a->add > b->val + b->add)
-            swap(a, b);
+            std::swap(a, b);
         lazy(a);
         a->r = meld(a->r, b);
-        swap(a->l, a->r);
+        std::swap(a->l, a->r);
         return a;
     }
 
