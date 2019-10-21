@@ -1,4 +1,7 @@
-#include"../Graph/dijkstra.hpp"
+//verify solveD(http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp)
+#include<bits/stdc++.h>
+using namespace std;
+#include"../Graph/spfa.hpp"
 
 int main(){
     ios::sync_with_stdio(false);
@@ -12,7 +15,7 @@ int main(){
         g[s].push_back(Edge{s,t,d});
     }
     vector<cost_t> d;
-    dijkstra(r,g,d);
+    spfa(r,g,d);
     for(int i=0;i<V;i++){
         if(d[i]<INF) cout<<d[i]<<"\n";
         else cout<<"INF"<<"\n";
