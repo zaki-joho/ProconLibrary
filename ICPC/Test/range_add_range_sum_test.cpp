@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3943377
 void solve_dsl_2_g()
 {
     int n, q;

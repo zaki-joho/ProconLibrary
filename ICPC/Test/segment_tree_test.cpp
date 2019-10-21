@@ -4,6 +4,7 @@
 
 using namespace std;
 
+// verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3943387
 void solve_dsl_2_a()
 { // range min
     int n, q;
@@ -30,6 +31,7 @@ void solve_dsl_2_a()
     }
 }
 
+// verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3943388
 void solve_dsl_2_b()
 { // range sum
     int n, q;

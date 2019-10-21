@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3943247#1
 void solve_itp2_2_c()
 {
     int n, q;
@@ -16,7 +17,7 @@ void solve_itp2_2_c()
         {
             int t, x;
             cin >> t >> x;
-            que[t].push(x);
+            que[t].push(-x);
         }
         else if (com == 1)
         {
@@ -24,7 +25,7 @@ void solve_itp2_2_c()
             cin >> t;
             if (que[t].empty())
                 continue;
-            cout << que[t].top() << endl;
+            cout << -que[t].top() << endl;
         }
         else
         {

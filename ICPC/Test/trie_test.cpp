@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// これそのまま書けるのが無くて困る
 int main()
 {
 }
