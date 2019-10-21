@@ -47,3 +47,25 @@ int ccw(Point a, Point b, Point c) {
 		return -2; // a,b,c : on a line
 	return 0;	  // a,c,b : on a line
 }
+
+class Line
+{
+public:
+    Point a, b;
+    Line() : a(Point(0, 0)), b(Point(0, 0)) {}
+    Line(Point a, Point b) : a(a), b(b) {}
+};
+
+ld dot(Line l, Line m)
+{
+    return dot((l.a - l.b), (m.a - m.b));
+}
+
+class Circle
+{
+public:
+	Point p;
+	ld r;
+	Circle() : p(Point(0, 0)), r(0) {}
+	Circle(Point p, ld r) : p(p), r(r) {}
+};
