@@ -5,13 +5,12 @@ using namespace std;
 class LiChaoTree {
 	using T = long long;
 	using Line = pair<T, T>;
-	const T inf = 1e9;
+	const T inf = 1e15;
 	// 最小化?
 	bool isMinimum;
 	int n;
 	// 各区間には, その区間で最小(or最大)を取りうる直線を保持する
 	vector<Line> node;
-	vector<int> usd;
 
 	static inline T f(const Line &line, T x) {return line.first * x + line.second;}
 
@@ -20,16 +19,15 @@ class LiChaoTree {
 	{
 		while(r-l>0)
 		{
-			if(!usd[k])
+			if(node[k]==Line(0, -inf))
 			{
 				node[k] = line;
-				usd[k] = true;
 				return;
 			}
 			int m = (l + r) / 2;
-			bool left = f(line, l) < f(node[k], l);
-			bool mid = f(line, m) < f(node[k], m);
-			bool right = f(line, r) < f(node[k], r);
+			bool left = !(f(line, l) < f(node[k], l));
+			bool mid = !(f(line, m) < f(node[k], m));
+			bool right = !(f(line, r) < f(node[k], r));
 			if(left && right)
 			{
 				node[k] = line;
@@ -58,11 +56,10 @@ class LiChaoTree {
 
 public:
 	// [0, n] 用の木を作る
-	LiChaoTree(int _n, bool isMin=true) : isMinimum(isMin) {
+	LiChaoTree(int _n, bool isMin=false) : isMinimum(isMin) {
 		n = 1;
 		while(n < _n) n *= 2;
 		node.resize(2 * n - 1, Line(0, isMin ? inf : -inf));
-		usd.resize(2 * n -1, false);
 	}
 	//　ax + b を追加する
 	void add(T a, T b)
@@ -73,26 +70,32 @@ public:
 	T get(T x)
 	{
 		int k = x + (n - 1);
-		T ret = usd[k] ? f(node[k], x) : inf;
+		T ret = (node[k]!=Line(0, -inf) ? f(node[k], x) : -inf);
 		while(k > 0)
 		{
 			k = (k-1)/2;
-			if(usd[k])
+			if(node[k]!=Line(0, -inf))
 			{
-				ret = min(ret, f(node[k], x));
+				ret = max(ret, f(node[k], x));
 			}
 		}
 		return ret;
 	}
 };
 
+using ll = long long;
+const ll inf = 1e15;
+
+// dp[i][j] := i曲目まで歌って, 時間j 消費した
+ll dp[4000 + 1][4000 + 1];
+vector<LiChaoTree> cht(4000 + 1, LiChaoTree(4000));
+
 // http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3946763
 void solve_aoj_2725()
 {
-	using ll = long long;
-	const ll inf = 1e15;
 	int N, TMAX;
 	cin >> N >> TMAX;
+	for(int i=0;i<=N;i++)for(int j=0;j<=TMAX;j++) dp[i][j]=-inf;
 	struct Song
 	{
 		ll t, p, f;
@@ -105,9 +108,6 @@ void solve_aoj_2725()
 		songs.push_back(Song{t, p, f});
 	}
 	sort(songs.begin(), songs.end(), [](const Song &e, const Song &f) { return e.f < f.f; });
-	// dp[i][j] := i曲目まで歌って, 時間j 消費した
-	vector<vector<ll>> dp(N + 1, vector<ll>(TMAX + 1, -inf));
-	vector<LiChaoTree> cht(TMAX + 1, LiChaoTree(4000));
 	ll ret = 0;
 	dp[0][0] = 0;
 	for (int i = 0; i < N; i++)
