@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// https://github.com/satanic0258/Cpp_snippet/blob/master/src/technique/ConvexHullTrick.cpp
 using CHT_TYPE = long long;
 class ConvexHullTrickDynamic
 {
