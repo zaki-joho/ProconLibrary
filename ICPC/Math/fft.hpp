@@ -6,33 +6,50 @@ using C = complex<dbl>;
 using Poly = vector<C>;
 const dbl PI = acos(-1);
 
-void fft(Poly& f,C w){
-    int n=f.size();
-    if(n==1){
-        return;
+Poly fft(Poly f,C w){
+    int n = f.size();
+    for (int m = n; m >= 2; m >>= 1){
+        int mh = m >> 1;
+        C wt = 1;
+        for (int i = 0; i < mh; i++){
+            for (int j = i; j < n; j += m){
+                C x = f[j] - f[j + mh];
+                f[j] = f[j] + f[j + mh];
+                f[j + mh] = wt * x;
+            }
+            wt *= w;
+        }
+        w *= w;
     }
-    int k=n/2;
-    Poly f0(k),f1(k);
-    for(int i=0;i<k;i++) f0[i]=f[i*2];
-    for(int i=0;i<k;i++) f1[i]=f[i*2+1];
-    fft(f0,w*w);
-    fft(f1,w*w);
-    C pw = 1;
-    for(int i=0;i<n;i++){
-        f[i] = f0[i%k] + pw * f1[i%k];
-        pw *= w;
+    int i = 0;
+    for (int j = 1; j < n - 1; j++){
+        for (int k = n >> 1; k > (i ^= k); k >>= 1) ;
+        if (j < i) swap(f[i], f[j]);
     }
+    return f;
 }
 
 Poly evaluate(Poly f){
     int n=f.size();
-    fft(f,polar(dbl(1),2*PI/n));
+    f = fft(f,polar(dbl(1),2*PI/n));
     return f;
 }
 
 Poly interpolate(Poly f){
     int n = f.size();
-    fft(f,polar(dbl(1),-2*PI/n));
+    f = fft(f,polar(dbl(1),-2*PI/n));
     for(auto &v:f) v/=n;
     return f;
+}
+
+Poly convolution(Poly a,Poly b){
+    int tar=(int)(a.size()+b.size())-1;
+    int sz=1;
+    while(sz<tar) sz*=2;
+    a.resize(sz);
+    b.resize(sz);
+    a = evaluate(a),b = evaluate(b);
+    for(int i=0;i<sz;i++) a[i] *= b[i];
+    a = interpolate(a);
+    return a;
 }
