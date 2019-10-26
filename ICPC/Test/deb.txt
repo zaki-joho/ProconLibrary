@@ -1,0 +1,1003 @@
+In file included from matrix_test.cpp:3:0:
+../Math/matrix.hpp: In function ‘bool isZero(type)’:
+../Math/matrix.hpp:14:17: error: no matching function for call to ‘abs(type&)’
+     return abs(x)<=EPS;
+                 ^
+In file included from /usr/include/c++/7/bits/std_abs.h:38:0,
+                 from /usr/include/c++/7/cmath:47,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:41,
+                 from matrix_test.cpp:1:
+/usr/include/stdlib.h:837:12: note: candidate: int abs(int)
+ extern int abs (int __x) __THROW __attribute__ ((__const__)) __wur;
+            ^~~
+/usr/include/stdlib.h:837:12: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘int’
+In file included from /usr/include/c++/7/cmath:47:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:41,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/std_abs.h:56:3: note: candidate: long int std::abs(long int)
+   abs(long __i) { return __builtin_labs(__i); }
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:56:3: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘long int’
+/usr/include/c++/7/bits/std_abs.h:61:3: note: candidate: long long int std::abs(long long int)
+   abs(long long __x) { return __builtin_llabs (__x); }
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:61:3: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘long long int’
+/usr/include/c++/7/bits/std_abs.h:70:3: note: candidate: constexpr double std::abs(double)
+   abs(double __x)
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:70:3: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘double’
+/usr/include/c++/7/bits/std_abs.h:74:3: note: candidate: constexpr float std::abs(float)
+   abs(float __x)
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:74:3: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘float’
+/usr/include/c++/7/bits/std_abs.h:78:3: note: candidate: constexpr long double std::abs(long double)
+   abs(long double __x)
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:78:3: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘long double’
+/usr/include/c++/7/bits/std_abs.h:84:3: note: candidate: constexpr __int128 std::abs(__int128)
+   abs(__GLIBCXX_TYPE_INT_N_0 __x) { return __x >= 0 ? __x : -__x; }
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:84:3: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘__int128’
+/usr/include/c++/7/bits/std_abs.h:102:3: note: candidate: constexpr __float128 std::abs(__float128)
+   abs(__float128 __x)
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:102:3: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘__float128’
+In file included from /usr/include/c++/7/ccomplex:39:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/complex:599:5: note: candidate: template<class _Tp> _Tp std::abs(const std::complex<_Tp>&)
+     abs(const complex<_Tp>& __z) { return __complex_abs(__z.__rep()); }
+     ^~~
+/usr/include/c++/7/complex:599:5: note:   template argument deduction/substitution failed:
+In file included from matrix_test.cpp:3:0:
+../Math/matrix.hpp:14:17: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::complex<_Tp>’
+     return abs(x)<=EPS;
+                 ^
+In file included from /usr/include/c++/7/valarray:592:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:95,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/valarray_after.h:442:5: note: candidate: template<class _Dom> std::_Expr<std::_UnClos<std::_Abs, std::_Expr, _Dom>, typename _Dom::value_type> std::abs(const std::_Expr<_Dom1, typename _Dom1::value_type>&)
+     _DEFINE_EXPR_UNARY_FUNCTION(abs, _Abs)
+     ^
+/usr/include/c++/7/bits/valarray_after.h:442:5: note:   template argument deduction/substitution failed:
+In file included from matrix_test.cpp:3:0:
+../Math/matrix.hpp:14:17: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+     return abs(x)<=EPS;
+                 ^
+In file included from /usr/include/c++/7/valarray:592:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:95,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/valarray_after.h:442:5: note: candidate: template<class _Tp> std::_Expr<std::_UnClos<std::_Abs, std::_ValArray, _Tp>, _Tp> std::abs(const std::valarray<_Tp>&)
+     _DEFINE_EXPR_UNARY_FUNCTION(abs, _Abs)
+     ^
+/usr/include/c++/7/bits/valarray_after.h:442:5: note:   template argument deduction/substitution failed:
+In file included from matrix_test.cpp:3:0:
+../Math/matrix.hpp:14:17: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::valarray<_Tp>’
+     return abs(x)<=EPS;
+                 ^
+../Math/matrix.hpp: In function ‘type det(Mat)’:
+../Math/matrix.hpp:18:5: error: ‘sweep’ was not declared in this scope
+     sweep(mat);
+     ^~~~~
+../Math/matrix.hpp:18:5: note: suggested alternative: ‘strsep’
+     sweep(mat);
+     ^~~~~
+     strsep
+../Math/matrix.hpp:22:25: error: could not convert ‘mat.std::vector<std::vector<ModInt<998244353> > >::operator[](((std::vector<std::vector<ModInt<998244353> > >::size_type)i))’ from ‘__gnu_cxx::__alloc_traits<std::allocator<std::vector<ModInt<998244353> > > >::value_type {aka std::vector<ModInt<998244353> >}’ to ‘type {aka ModInt<998244353>}’
+         if(isZero(mat[i])) return type(0);
+                         ^
+../Math/matrix.hpp:23:12: error: no match for ‘operator*=’ (operand types are ‘type {aka ModInt<998244353>}’ and ‘__gnu_cxx::__alloc_traits<std::allocator<std::vector<ModInt<998244353> > > >::value_type {aka std::vector<ModInt<998244353> >}’)
+         res*=mat[i];
+In file included from ../Math/matrix.hpp:5:0,
+                 from matrix_test.cpp:3:
+../Math/../../Math/mod_int.hpp:33:13: note: candidate: ModInt<Mod>& ModInt<Mod>::operator*=(const ModInt<Mod>&) [with int Mod = 998244353]
+     ModInt &operator*=(const ModInt &a)
+             ^~~~~~~~
+../Math/../../Math/mod_int.hpp:33:13: note:   no known conversion for argument 1 from ‘__gnu_cxx::__alloc_traits<std::allocator<std::vector<ModInt<998244353> > > >::value_type {aka std::vector<ModInt<998244353> >}’ to ‘const ModInt<998244353>&’
+In file included from matrix_test.cpp:3:0:
+../Math/matrix.hpp: In function ‘std::vector<int> sweep(Mat&, int)’:
+../Math/matrix.hpp:39:43: error: no matching function for call to ‘abs(type&)’
+             if(!isZero(mat[i][j]) && abs(v)<abs(mat[i][j])){
+                                           ^
+In file included from /usr/include/c++/7/bits/std_abs.h:38:0,
+                 from /usr/include/c++/7/cmath:47,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:41,
+                 from matrix_test.cpp:1:
+/usr/include/stdlib.h:837:12: note: candidate: int abs(int)
+ extern int abs (int __x) __THROW __attribute__ ((__const__)) __wur;
+            ^~~
+/usr/include/stdlib.h:837:12: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘int’
+In file included from /usr/include/c++/7/cmath:47:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:41,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/std_abs.h:56:3: note: candidate: long int std::abs(long int)
+   abs(long __i) { return __builtin_labs(__i); }
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:56:3: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘long int’
+/usr/include/c++/7/bits/std_abs.h:61:3: note: candidate: long long int std::abs(long long int)
+   abs(long long __x) { return __builtin_llabs (__x); }
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:61:3: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘long long int’
+/usr/include/c++/7/bits/std_abs.h:70:3: note: candidate: constexpr double std::abs(double)
+   abs(double __x)
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:70:3: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘double’
+/usr/include/c++/7/bits/std_abs.h:74:3: note: candidate: constexpr float std::abs(float)
+   abs(float __x)
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:74:3: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘float’
+/usr/include/c++/7/bits/std_abs.h:78:3: note: candidate: constexpr long double std::abs(long double)
+   abs(long double __x)
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:78:3: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘long double’
+/usr/include/c++/7/bits/std_abs.h:84:3: note: candidate: constexpr __int128 std::abs(__int128)
+   abs(__GLIBCXX_TYPE_INT_N_0 __x) { return __x >= 0 ? __x : -__x; }
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:84:3: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘__int128’
+/usr/include/c++/7/bits/std_abs.h:102:3: note: candidate: constexpr __float128 std::abs(__float128)
+   abs(__float128 __x)
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:102:3: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘__float128’
+In file included from /usr/include/c++/7/ccomplex:39:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/complex:599:5: note: candidate: template<class _Tp> _Tp std::abs(const std::complex<_Tp>&)
+     abs(const complex<_Tp>& __z) { return __complex_abs(__z.__rep()); }
+     ^~~
+/usr/include/c++/7/complex:599:5: note:   template argument deduction/substitution failed:
+In file included from matrix_test.cpp:3:0:
+../Math/matrix.hpp:39:43: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::complex<_Tp>’
+             if(!isZero(mat[i][j]) && abs(v)<abs(mat[i][j])){
+                                           ^
+In file included from /usr/include/c++/7/valarray:592:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:95,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/valarray_after.h:442:5: note: candidate: template<class _Dom> std::_Expr<std::_UnClos<std::_Abs, std::_Expr, _Dom>, typename _Dom::value_type> std::abs(const std::_Expr<_Dom1, typename _Dom1::value_type>&)
+     _DEFINE_EXPR_UNARY_FUNCTION(abs, _Abs)
+     ^
+/usr/include/c++/7/bits/valarray_after.h:442:5: note:   template argument deduction/substitution failed:
+In file included from matrix_test.cpp:3:0:
+../Math/matrix.hpp:39:43: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+             if(!isZero(mat[i][j]) && abs(v)<abs(mat[i][j])){
+                                           ^
+In file included from /usr/include/c++/7/valarray:592:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:95,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/valarray_after.h:442:5: note: candidate: template<class _Tp> std::_Expr<std::_UnClos<std::_Abs, std::_ValArray, _Tp>, _Tp> std::abs(const std::valarray<_Tp>&)
+     _DEFINE_EXPR_UNARY_FUNCTION(abs, _Abs)
+     ^
+/usr/include/c++/7/bits/valarray_after.h:442:5: note:   template argument deduction/substitution failed:
+In file included from matrix_test.cpp:3:0:
+../Math/matrix.hpp:39:43: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::valarray<_Tp>’
+             if(!isZero(mat[i][j]) && abs(v)<abs(mat[i][j])){
+                                           ^
+../Math/matrix.hpp:39:58: error: no matching function for call to ‘abs(__gnu_cxx::__alloc_traits<std::allocator<ModInt<998244353> > >::value_type&)’
+             if(!isZero(mat[i][j]) && abs(v)<abs(mat[i][j])){
+                                                          ^
+In file included from /usr/include/c++/7/bits/std_abs.h:38:0,
+                 from /usr/include/c++/7/cmath:47,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:41,
+                 from matrix_test.cpp:1:
+/usr/include/stdlib.h:837:12: note: candidate: int abs(int)
+ extern int abs (int __x) __THROW __attribute__ ((__const__)) __wur;
+            ^~~
+/usr/include/stdlib.h:837:12: note:   no known conversion for argument 1 from ‘__gnu_cxx::__alloc_traits<std::allocator<ModInt<998244353> > >::value_type {aka ModInt<998244353>}’ to ‘int’
+In file included from /usr/include/c++/7/cmath:47:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:41,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/std_abs.h:56:3: note: candidate: long int std::abs(long int)
+   abs(long __i) { return __builtin_labs(__i); }
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:56:3: note:   no known conversion for argument 1 from ‘__gnu_cxx::__alloc_traits<std::allocator<ModInt<998244353> > >::value_type {aka ModInt<998244353>}’ to ‘long int’
+/usr/include/c++/7/bits/std_abs.h:61:3: note: candidate: long long int std::abs(long long int)
+   abs(long long __x) { return __builtin_llabs (__x); }
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:61:3: note:   no known conversion for argument 1 from ‘__gnu_cxx::__alloc_traits<std::allocator<ModInt<998244353> > >::value_type {aka ModInt<998244353>}’ to ‘long long int’
+/usr/include/c++/7/bits/std_abs.h:70:3: note: candidate: constexpr double std::abs(double)
+   abs(double __x)
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:70:3: note:   no known conversion for argument 1 from ‘__gnu_cxx::__alloc_traits<std::allocator<ModInt<998244353> > >::value_type {aka ModInt<998244353>}’ to ‘double’
+/usr/include/c++/7/bits/std_abs.h:74:3: note: candidate: constexpr float std::abs(float)
+   abs(float __x)
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:74:3: note:   no known conversion for argument 1 from ‘__gnu_cxx::__alloc_traits<std::allocator<ModInt<998244353> > >::value_type {aka ModInt<998244353>}’ to ‘float’
+/usr/include/c++/7/bits/std_abs.h:78:3: note: candidate: constexpr long double std::abs(long double)
+   abs(long double __x)
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:78:3: note:   no known conversion for argument 1 from ‘__gnu_cxx::__alloc_traits<std::allocator<ModInt<998244353> > >::value_type {aka ModInt<998244353>}’ to ‘long double’
+/usr/include/c++/7/bits/std_abs.h:84:3: note: candidate: constexpr __int128 std::abs(__int128)
+   abs(__GLIBCXX_TYPE_INT_N_0 __x) { return __x >= 0 ? __x : -__x; }
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:84:3: note:   no known conversion for argument 1 from ‘__gnu_cxx::__alloc_traits<std::allocator<ModInt<998244353> > >::value_type {aka ModInt<998244353>}’ to ‘__int128’
+/usr/include/c++/7/bits/std_abs.h:102:3: note: candidate: constexpr __float128 std::abs(__float128)
+   abs(__float128 __x)
+   ^~~
+/usr/include/c++/7/bits/std_abs.h:102:3: note:   no known conversion for argument 1 from ‘__gnu_cxx::__alloc_traits<std::allocator<ModInt<998244353> > >::value_type {aka ModInt<998244353>}’ to ‘__float128’
+In file included from /usr/include/c++/7/ccomplex:39:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/complex:599:5: note: candidate: template<class _Tp> _Tp std::abs(const std::complex<_Tp>&)
+     abs(const complex<_Tp>& __z) { return __complex_abs(__z.__rep()); }
+     ^~~
+/usr/include/c++/7/complex:599:5: note:   template argument deduction/substitution failed:
+In file included from matrix_test.cpp:3:0:
+../Math/matrix.hpp:39:58: note:   ‘__gnu_cxx::__alloc_traits<std::allocator<ModInt<998244353> > >::value_type {aka ModInt<998244353>}’ is not derived from ‘const std::complex<_Tp>’
+             if(!isZero(mat[i][j]) && abs(v)<abs(mat[i][j])){
+                                                          ^
+In file included from /usr/include/c++/7/valarray:592:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:95,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/valarray_after.h:442:5: note: candidate: template<class _Dom> std::_Expr<std::_UnClos<std::_Abs, std::_Expr, _Dom>, typename _Dom::value_type> std::abs(const std::_Expr<_Dom1, typename _Dom1::value_type>&)
+     _DEFINE_EXPR_UNARY_FUNCTION(abs, _Abs)
+     ^
+/usr/include/c++/7/bits/valarray_after.h:442:5: note:   template argument deduction/substitution failed:
+In file included from matrix_test.cpp:3:0:
+../Math/matrix.hpp:39:58: note:   ‘__gnu_cxx::__alloc_traits<std::allocator<ModInt<998244353> > >::value_type {aka ModInt<998244353>}’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+             if(!isZero(mat[i][j]) && abs(v)<abs(mat[i][j])){
+                                                          ^
+In file included from /usr/include/c++/7/valarray:592:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:95,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/valarray_after.h:442:5: note: candidate: template<class _Tp> std::_Expr<std::_UnClos<std::_Abs, std::_ValArray, _Tp>, _Tp> std::abs(const std::valarray<_Tp>&)
+     _DEFINE_EXPR_UNARY_FUNCTION(abs, _Abs)
+     ^
+/usr/include/c++/7/bits/valarray_after.h:442:5: note:   template argument deduction/substitution failed:
+In file included from matrix_test.cpp:3:0:
+../Math/matrix.hpp:39:58: note:   ‘__gnu_cxx::__alloc_traits<std::allocator<ModInt<998244353> > >::value_type {aka ModInt<998244353>}’ is not derived from ‘const std::valarray<_Tp>’
+             if(!isZero(mat[i][j]) && abs(v)<abs(mat[i][j])){
+                                                          ^
+matrix_test.cpp: In function ‘void YOSUPO_matrix_det()’:
+matrix_test.cpp:19:9: error: no match for ‘operator<<’ (operand types are ‘std::ostream {aka std::basic_ostream<char>}’ and ‘type {aka ModInt<998244353>}’)
+     cout<<det(M)<<endl;
+     ~~~~^~~~~~~~
+In file included from ../Math/matrix.hpp:5:0,
+                 from matrix_test.cpp:3:
+../Math/../../Math/mod_int.hpp:91:15: note: candidate: std::ostream& operator<<(std::ostream&, ModInt<Mod>&) [with int Mod = 998244353; std::ostream = std::basic_ostream<char>] <near match>
+ std::ostream &operator<<(std::ostream &os, ModInt<Mod> &val)
+               ^~~~~~~~
+../Math/../../Math/mod_int.hpp:91:15: note:   conversion of argument 2 would be ill-formed:
+matrix_test.cpp:19:14: error: cannot bind non-const lvalue reference of type ‘ModInt<998244353>&’ to an rvalue of type ‘type {aka ModInt<998244353>}’
+     cout<<det(M)<<endl;
+           ~~~^~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/complex:45,
+                 from /usr/include/c++/7/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/ostream:108:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+       ^~~~~~~~
+/usr/include/c++/7/ostream:108:7: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&) {aka std::basic_ostream<char>& (*)(std::basic_ostream<char>&)}’
+/usr/include/c++/7/ostream:117:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]
+       operator<<(__ios_type& (*__pf)(__ios_type&))
+       ^~~~~~~~
+/usr/include/c++/7/ostream:117:7: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&) {aka std::basic_ios<char>& (*)(std::basic_ios<char>&)}’
+/usr/include/c++/7/ostream:127:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(ios_base& (*__pf) (ios_base&))
+       ^~~~~~~~
+/usr/include/c++/7/ostream:127:7: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘std::ios_base& (*)(std::ios_base&)’
+/usr/include/c++/7/ostream:166:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long __n)
+       ^~~~~~~~
+/usr/include/c++/7/ostream:166:7: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘long int’
+/usr/include/c++/7/ostream:170:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long __n)
+       ^~~~~~~~
+/usr/include/c++/7/ostream:170:7: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘long unsigned int’
+/usr/include/c++/7/ostream:174:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(bool __n)
+       ^~~~~~~~
+/usr/include/c++/7/ostream:174:7: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘bool’
+In file included from /usr/include/c++/7/ostream:693:0,
+                 from /usr/include/c++/7/istream:39,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/complex:45,
+                 from /usr/include/c++/7/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/ostream.tcc:91:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/7/bits/ostream.tcc:91:5: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘short int’
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/complex:45,
+                 from /usr/include/c++/7/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/ostream:181:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned short __n)
+       ^~~~~~~~
+/usr/include/c++/7/ostream:181:7: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘short unsigned int’
+In file included from /usr/include/c++/7/ostream:693:0,
+                 from /usr/include/c++/7/istream:39,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/complex:45,
+                 from /usr/include/c++/7/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/ostream.tcc:105:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/7/bits/ostream.tcc:105:5: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘int’
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/complex:45,
+                 from /usr/include/c++/7/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/ostream:192:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned int __n)
+       ^~~~~~~~
+/usr/include/c++/7/ostream:192:7: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘unsigned int’
+/usr/include/c++/7/ostream:201:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long long __n)
+       ^~~~~~~~
+/usr/include/c++/7/ostream:201:7: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘long long int’
+/usr/include/c++/7/ostream:205:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(unsigned long long __n)
+       ^~~~~~~~
+/usr/include/c++/7/ostream:205:7: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘long long unsigned int’
+/usr/include/c++/7/ostream:220:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(double __f)
+       ^~~~~~~~
+/usr/include/c++/7/ostream:220:7: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘double’
+/usr/include/c++/7/ostream:224:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(float __f)
+       ^~~~~~~~
+/usr/include/c++/7/ostream:224:7: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘float’
+/usr/include/c++/7/ostream:232:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(long double __f)
+       ^~~~~~~~
+/usr/include/c++/7/ostream:232:7: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘long double’
+/usr/include/c++/7/ostream:245:7: note: candidate: std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]
+       operator<<(const void* __p)
+       ^~~~~~~~
+/usr/include/c++/7/ostream:245:7: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘const void*’
+In file included from /usr/include/c++/7/ostream:693:0,
+                 from /usr/include/c++/7/istream:39,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/complex:45,
+                 from /usr/include/c++/7/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/ostream.tcc:119:5: note: candidate: std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]
+     basic_ostream<_CharT, _Traits>::
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/7/bits/ostream.tcc:119:5: note:   no known conversion for argument 1 from ‘type {aka ModInt<998244353>}’ to ‘std::basic_ostream<char>::__streambuf_type* {aka std::basic_streambuf<char>*}’
+In file included from /usr/include/c++/7/regex:62:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:110,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/regex.h:1525:5: note: candidate: template<class _Ch_type, class _Ch_traits, class _Bi_iter> std::basic_ostream<_CharT, _Traits>& std::__cxx11::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__cxx11::sub_match<_Bi_iter>&)
+     operator<<(basic_ostream<_Ch_type, _Ch_traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/regex.h:1525:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::__cxx11::sub_match<_Bi_iter>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:3160:5: note: candidate: template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::piecewise_linear_distribution<_RealType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:3160:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::piecewise_linear_distribution<_RealType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:2944:5: note: candidate: template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::piecewise_constant_distribution<_RealType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:2944:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::piecewise_constant_distribution<_RealType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:2734:5: note: candidate: template<class _IntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::discrete_distribution<_IntType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:2734:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::discrete_distribution<_IntType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:2275:5: note: candidate: template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::student_t_distribution<_RealType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:2275:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::student_t_distribution<_RealType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:2200:5: note: candidate: template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::fisher_f_distribution<_RealType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:2200:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::fisher_f_distribution<_RealType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:2036:5: note: candidate: template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::chi_squared_distribution<_RealType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:2036:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::chi_squared_distribution<_RealType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:1963:5: note: candidate: template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::lognormal_distribution<_RealType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:1963:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::lognormal_distribution<_RealType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:1667:5: note: candidate: template<class _IntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::binomial_distribution<_IntType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:1667:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::binomial_distribution<_IntType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:1400:5: note: candidate: template<class _IntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::poisson_distribution<_IntType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:1400:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::poisson_distribution<_IntType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:1195:5: note: candidate: template<class _IntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::negative_binomial_distribution<_IntType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:1195:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::negative_binomial_distribution<_IntType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:831:5: note: candidate: template<class _RandomNumberEngine, long unsigned int __k, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::shuffle_order_engine<_RandomNumberEngine, __k>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:831:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::shuffle_order_engine<_RandomNumberEngine, __k>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:702:5: note: candidate: template<class _RandomNumberEngine, long unsigned int __p, long unsigned int __r, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::discard_block_engine<_RandomNumberEngine, __p, __r>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:702:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::discard_block_engine<_RandomNumberEngine, __p, __r>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:632:5: note: candidate: template<class _UIntType, long unsigned int __w, long unsigned int __s, long unsigned int __r, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::subtract_with_carry_engine<_UIntType, __w, __s, __r>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:632:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::subtract_with_carry_engine<_UIntType, __w, __s, __r>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:156:5: note: candidate: template<class _UIntType, _UIntType __a, _UIntType __c, _UIntType __m, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::linear_congruential_engine<_UIntType, __a, __c, __m>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:156:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::linear_congruential_engine<_UIntType, __a, __c, __m>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:2598:5: note: candidate: template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::extreme_value_distribution<_RealType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:2598:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::extreme_value_distribution<_RealType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:2522:5: note: candidate: template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::weibull_distribution<_RealType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:2522:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::weibull_distribution<_RealType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:1731:5: note: candidate: template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::exponential_distribution<_RealType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:1731:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::exponential_distribution<_RealType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:2444:5: note: candidate: template<class _RealType1, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::gamma_distribution<_RealType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:2444:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::gamma_distribution<_RealType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:1080:5: note: candidate: template<class _IntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::geometric_distribution<_IntType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:1080:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::geometric_distribution<_IntType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:1898:5: note: candidate: template<class _RealType1, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::normal_distribution<_RealType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:1898:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::normal_distribution<_RealType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:998:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::bernoulli_distribution&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:998:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:14: note:   cannot convert ‘det(std::vector<std::vector<ModInt<998244353> > >(M))’ (type ‘type {aka ModInt<998244353>}’) to type ‘const std::bernoulli_distribution&’
+     cout<<det(M)<<endl;
+           ~~~^~~
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:2123:5: note: candidate: template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::cauchy_distribution<_RealType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:2123:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::cauchy_distribution<_RealType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:936:5: note: candidate: template<class _RealType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::uniform_real_distribution<_IntType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:936:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::uniform_real_distribution<_IntType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:877:5: note: candidate: template<class _IntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::uniform_int_distribution<_IntType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:877:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::uniform_int_distribution<_IntType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:51:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.tcc:477:5: note: candidate: template<class _UIntType1, long unsigned int __w1, long unsigned int __n1, long unsigned int __m1, long unsigned int __r1, _UIntType1 __a1, long unsigned int __u1, _UIntType1 __d1, long unsigned int __s1, _UIntType1 __b1, long unsigned int __t1, _UIntType1 __c1, long unsigned int __l1, _UIntType1 __f1, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.tcc:477:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d, __s, __b, __t, __c, __l, __f>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/random:49:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:108,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/random.h:1269:5: note: candidate: template<class _RandomNumberEngine, long unsigned int __w, class _UIntType, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::independent_bits_engine<_RandomNumberEngine, __w, _UIntType>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/random.h:1269:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::independent_bits_engine<_RandomNumberEngine, __w, _UIntType>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/future:39:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:105,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/thread:313:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::thread::id)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, thread::id __id)
+     ^~~~~~~~
+/usr/include/c++/7/thread:313:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:14: note:   cannot convert ‘det(std::vector<std::vector<ModInt<998244353> > >(M))’ (type ‘type {aka ModInt<998244353>}’) to type ‘std::thread::id’
+     cout<<det(M)<<endl;
+           ~~~^~~
+In file included from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:95:0,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/valarray:1180:1: note: candidate: template<class _Tp> std::_Expr<std::_BinClos<std::__shift_left, std::_Constant, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__shift_left, _Tp>::result_type> std::operator<<(const _Tp&, const std::valarray<_Tp>&)
+ _DEFINE_BINARY_OPERATOR(<<, __shift_left)
+ ^
+/usr/include/c++/7/valarray:1180:1: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::valarray<_Tp>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:95:0,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/valarray:1180:1: note: candidate: template<class _Tp> std::_Expr<std::_BinClos<std::__shift_left, std::_ValArray, std::_Constant, _Tp, _Tp>, typename std::__fun<std::__shift_left, _Tp>::result_type> std::operator<<(const std::valarray<_Tp>&, const _Tp&)
+ _DEFINE_BINARY_OPERATOR(<<, __shift_left)
+ ^
+/usr/include/c++/7/valarray:1180:1: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘std::ostream {aka std::basic_ostream<char>}’ is not derived from ‘const std::valarray<_Tp>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:95:0,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/valarray:1180:1: note: candidate: template<class _Tp> std::_Expr<std::_BinClos<std::__shift_left, std::_ValArray, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__shift_left, _Tp>::result_type> std::operator<<(const std::valarray<_Tp>&, const std::valarray<_Tp>&)
+ _DEFINE_BINARY_OPERATOR(<<, __shift_left)
+ ^
+/usr/include/c++/7/valarray:1180:1: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘std::ostream {aka std::basic_ostream<char>}’ is not derived from ‘const std::valarray<_Tp>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/valarray:592:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:95,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/valarray_after.h:410:5: note: candidate: template<class _Dom> std::_Expr<std::_BinClos<std::__shift_left, std::_ValArray, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const std::valarray<typename _Dom::value_type>&, const std::_Expr<_Dom1, typename _Dom1::value_type>&)
+     _DEFINE_EXPR_BINARY_OPERATOR(<<, __shift_left)
+     ^
+/usr/include/c++/7/bits/valarray_after.h:410:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/valarray:592:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:95,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/valarray_after.h:410:5: note: candidate: template<class _Dom> std::_Expr<std::_BinClos<std::__shift_left, std::_Expr, std::_ValArray, _Dom, typename _Dom::value_type>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const std::_Expr<_Dom1, typename _Dom1::value_type>&, const std::valarray<typename _Dom::value_type>&)
+     _DEFINE_EXPR_BINARY_OPERATOR(<<, __shift_left)
+     ^
+/usr/include/c++/7/bits/valarray_after.h:410:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘std::ostream {aka std::basic_ostream<char>}’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/valarray:592:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:95,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/valarray_after.h:410:5: note: candidate: template<class _Dom> std::_Expr<std::_BinClos<std::__shift_left, std::_Constant, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const typename _Dom::value_type&, const std::_Expr<_Dom1, typename _Dom1::value_type>&)
+     _DEFINE_EXPR_BINARY_OPERATOR(<<, __shift_left)
+     ^
+/usr/include/c++/7/bits/valarray_after.h:410:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/valarray:592:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:95,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/valarray_after.h:410:5: note: candidate: template<class _Dom> std::_Expr<std::_BinClos<std::__shift_left, std::_Expr, std::_Constant, _Dom, typename _Dom::value_type>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const std::_Expr<_Dom1, typename _Dom1::value_type>&, const typename _Dom::value_type&)
+     _DEFINE_EXPR_BINARY_OPERATOR(<<, __shift_left)
+     ^
+/usr/include/c++/7/bits/valarray_after.h:410:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘std::ostream {aka std::basic_ostream<char>}’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/valarray:592:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:95,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/valarray_after.h:410:5: note: candidate: template<class _Dom1, class _Dom2> std::_Expr<std::_BinClos<std::__shift_left, std::_Expr, std::_Expr, _Dom1, _Dom2>, typename std::__fun<std::__shift_left, typename _Dom1::value_type>::result_type> std::operator<<(const std::_Expr<_Dom1, typename _Dom1::value_type>&, const std::_Expr<_Dom2, typename _Dom2::value_type>&)
+     _DEFINE_EXPR_BINARY_OPERATOR(<<, __shift_left)
+     ^
+/usr/include/c++/7/bits/valarray_after.h:410:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘std::ostream {aka std::basic_ostream<char>}’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/memory:81:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:82,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/shared_ptr.h:66:5: note: candidate: template<class _Ch, class _Tr, class _Tp, __gnu_cxx::_Lock_policy _Lp> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__shared_ptr<_Tp, _Lp>&)
+     operator<<(std::basic_ostream<_Ch, _Tr>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/shared_ptr.h:66:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::__shared_ptr<_Tp, _Lp>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:72:0,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/iomanip:363:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Put_time<_CharT>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_time<_CharT> __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:363:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘ModInt<998244353>’ is not derived from ‘std::_Put_time<_CharT>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:72:0,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/iomanip:311:5: note: candidate: template<class _CharT, class _Traits, class _MoneyT> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Put_money<_MoneyT>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Put_money<_MoneyT> __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:311:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘ModInt<998244353>’ is not derived from ‘std::_Put_money<_MoneyT>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:72:0,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/iomanip:238:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setw)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setw __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:238:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:14: note:   cannot convert ‘det(std::vector<std::vector<ModInt<998244353> > >(M))’ (type ‘type {aka ModInt<998244353>}’) to type ‘std::_Setw’
+     cout<<det(M)<<endl;
+           ~~~^~~
+In file included from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:72:0,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/iomanip:208:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setprecision)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setprecision __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:208:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:14: note:   cannot convert ‘det(std::vector<std::vector<ModInt<998244353> > >(M))’ (type ‘type {aka ModInt<998244353>}’) to type ‘std::_Setprecision’
+     cout<<det(M)<<endl;
+           ~~~^~~
+In file included from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:72:0,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/iomanip:178:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setfill<_CharT>)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setfill<_CharT> __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:178:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘ModInt<998244353>’ is not derived from ‘std::_Setfill<_CharT>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:72:0,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/iomanip:143:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setbase)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setbase __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:143:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:14: note:   cannot convert ‘det(std::vector<std::vector<ModInt<998244353> > >(M))’ (type ‘type {aka ModInt<998244353>}’) to type ‘std::_Setbase’
+     cout<<det(M)<<endl;
+           ~~~^~~
+In file included from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:72:0,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/iomanip:109:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Setiosflags)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Setiosflags __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:109:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:14: note:   cannot convert ‘det(std::vector<std::vector<ModInt<998244353> > >(M))’ (type ‘type {aka ModInt<998244353>}’) to type ‘std::_Setiosflags’
+     cout<<det(M)<<endl;
+           ~~~^~~
+In file included from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:72:0,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/iomanip:79:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::_Resetiosflags)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, _Resetiosflags __f)
+     ^~~~~~~~
+/usr/include/c++/7/iomanip:79:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:14: note:   cannot convert ‘det(std::vector<std::vector<ModInt<998244353> > >(M))’ (type ‘type {aka ModInt<998244353>}’) to type ‘std::_Resetiosflags’
+     cout<<det(M)<<endl;
+           ~~~^~~
+In file included from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:66:0,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bitset:1530:5: note: candidate: template<class _CharT, class _Traits, long unsigned int _Nb> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::bitset<_Nb>&)
+     operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bitset:1530:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::bitset<_Nb>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/ccomplex:39:0,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/complex:528:5: note: candidate: template<class _Tp, class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::complex<_Tp>&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, const complex<_Tp>& __x)
+     ^~~~~~~~
+/usr/include/c++/7/complex:528:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::complex<_Tp>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/complex:45,
+                 from /usr/include/c++/7/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/ostream:682:5: note: candidate: template<class _Ostream, class _Tp> typename std::enable_if<std::__and_<std::__not_<std::is_lvalue_reference<_Tp> >, std::__is_convertible_to_basic_ostream<_Ostream>, std::__is_insertable<typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type, const _Tp&, void> >::value, typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type>::type std::operator<<(_Ostream&&, const _Tp&)
+     operator<<(_Ostream&& __os, const _Tp& __x)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:682:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/7/ostream: In substitution of ‘template<class _Ostream, class _Tp> typename std::enable_if<std::__and_<std::__not_<std::is_lvalue_reference<_Tp> >, std::__is_convertible_to_basic_ostream<_Ostream>, std::__is_insertable<typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type, const _Tp&, void> >::value, typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type>::type std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::basic_ostream<char>&; _Tp = ModInt<998244353>]’:
+matrix_test.cpp:19:16:   required from here
+/usr/include/c++/7/ostream:682:5: error: no type named ‘type’ in ‘struct std::enable_if<false, std::basic_ostream<char>&>’
+/usr/include/c++/7/ostream:574:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:574:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:14: note:   cannot convert ‘det(std::vector<std::vector<ModInt<998244353> > >(M))’ (type ‘type {aka ModInt<998244353>}’) to type ‘const unsigned char*’
+     cout<<det(M)<<endl;
+           ~~~^~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/complex:45,
+                 from /usr/include/c++/7/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/ostream:569:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:569:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:14: note:   cannot convert ‘det(std::vector<std::vector<ModInt<998244353> > >(M))’ (type ‘type {aka ModInt<998244353>}’) to type ‘const signed char*’
+     cout<<det(M)<<endl;
+           ~~~^~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/complex:45,
+                 from /usr/include/c++/7/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/ostream:556:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)
+     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:556:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:14: note:   cannot convert ‘det(std::vector<std::vector<ModInt<998244353> > >(M))’ (type ‘type {aka ModInt<998244353>}’) to type ‘const char*’
+     cout<<det(M)<<endl;
+           ~~~^~~
+In file included from /usr/include/c++/7/ostream:693:0,
+                 from /usr/include/c++/7/istream:39,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/complex:45,
+                 from /usr/include/c++/7/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/ostream.tcc:321:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+     ^~~~~~~~
+/usr/include/c++/7/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:14: note:   cannot convert ‘det(std::vector<std::vector<ModInt<998244353> > >(M))’ (type ‘type {aka ModInt<998244353>}’) to type ‘const char*’
+     cout<<det(M)<<endl;
+           ~~~^~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/complex:45,
+                 from /usr/include/c++/7/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/ostream:539:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:539:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   mismatched types ‘const _CharT*’ and ‘ModInt<998244353>’
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/complex:45,
+                 from /usr/include/c++/7/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/ostream:519:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)
+     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:519:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:14: note:   cannot convert ‘det(std::vector<std::vector<ModInt<998244353> > >(M))’ (type ‘type {aka ModInt<998244353>}’) to type ‘unsigned char’
+     cout<<det(M)<<endl;
+           ~~~^~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/complex:45,
+                 from /usr/include/c++/7/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/ostream:514:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)
+     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:514:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:14: note:   cannot convert ‘det(std::vector<std::vector<ModInt<998244353> > >(M))’ (type ‘type {aka ModInt<998244353>}’) to type ‘signed char’
+     cout<<det(M)<<endl;
+           ~~~^~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/complex:45,
+                 from /usr/include/c++/7/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/ostream:508:5: note: candidate: template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)
+     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:508:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:14: note:   cannot convert ‘det(std::vector<std::vector<ModInt<998244353> > >(M))’ (type ‘type {aka ModInt<998244353>}’) to type ‘char’
+     cout<<det(M)<<endl;
+           ~~~^~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/complex:45,
+                 from /usr/include/c++/7/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/ostream:502:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:502:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:14: note:   cannot convert ‘det(std::vector<std::vector<ModInt<998244353> > >(M))’ (type ‘type {aka ModInt<998244353>}’) to type ‘char’
+     cout<<det(M)<<endl;
+           ~~~^~~
+In file included from /usr/include/c++/7/istream:39:0,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/complex:45,
+                 from /usr/include/c++/7/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/ostream:497:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)
+     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+     ^~~~~~~~
+/usr/include/c++/7/ostream:497:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   deduced conflicting types for parameter ‘_CharT’ (‘char’ and ‘ModInt<998244353>’)
+     cout<<det(M)<<endl;
+                ^
+In file included from /usr/include/c++/7/bits/ios_base.h:46:0,
+                 from /usr/include/c++/7/ios:42,
+                 from /usr/include/c++/7/istream:38,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/complex:45,
+                 from /usr/include/c++/7/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/system_error:217:5: note: candidate: template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::error_code&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+     ^~~~~~~~
+/usr/include/c++/7/system_error:217:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:14: note:   cannot convert ‘det(std::vector<std::vector<ModInt<998244353> > >(M))’ (type ‘type {aka ModInt<998244353>}’) to type ‘const std::error_code&’
+     cout<<det(M)<<endl;
+           ~~~^~~
+In file included from /usr/include/c++/7/string:52:0,
+                 from /usr/include/c++/7/bits/locale_classes.h:40,
+                 from /usr/include/c++/7/bits/ios_base.h:41,
+                 from /usr/include/c++/7/ios:42,
+                 from /usr/include/c++/7/istream:38,
+                 from /usr/include/c++/7/sstream:38,
+                 from /usr/include/c++/7/complex:45,
+                 from /usr/include/c++/7/ccomplex:39,
+                 from /usr/include/x86_64-linux-gnu/c++/7/bits/stdc++.h:52,
+                 from matrix_test.cpp:1:
+/usr/include/c++/7/bits/basic_string.h:6284:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<<(basic_ostream<_CharT, _Traits>& __os,
+     ^~~~~~~~
+/usr/include/c++/7/bits/basic_string.h:6284:5: note:   template argument deduction/substitution failed:
+matrix_test.cpp:19:16: note:   ‘type {aka ModInt<998244353>}’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+     cout<<det(M)<<endl;
+                ^
+In file included from ../Math/matrix.hpp:5:0,
+                 from matrix_test.cpp:3:
+../Math/../../Math/mod_int.hpp: In instantiation of ‘ModInt<Mod>& ModInt<Mod>::operator/=(ModInt<Mod>&) [with int Mod = 998244353]’:
+../Math/../../Math/mod_int.hpp:63:30:   required from ‘ModInt<Mod> ModInt<Mod>::operator/(ModInt<Mod>&) [with int Mod = 998244353]’
+../Math/matrix.hpp:49:46:   required from here
+../Math/../../Math/mod_int.hpp:41:13: error: no match for ‘operator*=’ (operand types are ‘ModInt<998244353>::type {aka long long int}’ and ‘ModInt<998244353>’)
+         val *= a.inv();
