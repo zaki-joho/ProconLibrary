@@ -1,4 +1,5 @@
 #include "../bits/stdc++.h"
+using namespace std;
 // 入力文字列に対してマッチするパターンを検索
 // O(N + M)
 // N := 入力文字列, M := パターン文字列の長さ合計
@@ -11,8 +12,6 @@
 */
 // https://github.com/Suikaba/procon-lib/blob/master/string/aho_corasick.hpp
 // verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3954111
-
-using namespace std;
 // 出現文字
 struct characters {
   // lower alphabets
