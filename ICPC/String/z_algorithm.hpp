@@ -2,7 +2,7 @@
 using namespace std;
 // 文字列S の各i に対し, S と S[i:|S|-1] の最長共通接頭辞を求める
 // https://snuke.hatenablog.com/entry/2014/12/03/214243
-// verified: https://atcoder.jp/contests/arc055/submissions/2711907
+// verified: https://atcoder.jp/contests/arc055/submissions/8142114
 /*
  * ex.  s = "aaabaaaab"
  * -> z[i]= "*21034210"
