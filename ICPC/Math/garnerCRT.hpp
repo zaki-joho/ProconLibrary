@@ -7,6 +7,12 @@ const ll MOD=1e9+7;
 // O(K^2), where K is size of b and m
 // return 
 ll crt(vector<ll> b,vector<ll> m){
-    for(int i=0;i<)
+    int k=b.size();
+    auto calc=[&](int end,ll k){
+        
+    };
+    for(int i=0;i<m;i++){
+
+    }
     
 }
