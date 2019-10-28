@@ -3,6 +3,9 @@ using namespace std;
 
 // http://potetisensei.hatenablog.com/entry/2017/07/10/174908
 // verified : http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3954691
+
+// 返り値: a[i]=s[0,i]のsuffixとpreffixが最大何文字共通するか
+// 計算量 O(|s|)
 vector<int> kmp(const string &s) {
   int n = s.size();
   vector<int> a(n + 1);
