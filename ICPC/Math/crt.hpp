@@ -2,7 +2,7 @@
 using namespace std;
 #include"extGcd.hpp"
 
-// return minimum x s.t. x>=0 and x=b0 (mod m0) and x=b1 (mod m1)
+// return (x,m) s.t. v=b0 (mod m0) and v=b1 (mod m1) <-> v=x (mod m)
 // if such x don't exist, return (0,-1)
 // O(log(m0)+log(m1))
 // Note that the risk of overflow
