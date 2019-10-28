@@ -1,11 +1,17 @@
 #include "../bits/stdc++.h"
 using namespace std;
 
-// http://potetisensei.hatenablog.com/entry/2017/07/10/174908
-// verified : http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3954691
-
 // 返り値: a[i]=s[0,i]のsuffixとpreffixが最大何文字共通するか
+// ただし、a[i]<i+1である(s[0,i]をとってくれば一致するので)
+/*
+ ex.
+ aabaabaaa
+ 010123452
+*/
 // 計算量 O(|s|)
+
+// 文字列tからpを見つけたい場合、p+'$'+tとしてkmpすればできる
+// s[0,i]の最小の周期はi-kmp[i]+1
 vector<int> kmp(const string &s) {
   int n = s.size();
   vector<int> a(n + 1);

@@ -10,8 +10,7 @@ using namespace std;
 この処理は bfs で可能. 各ノードはその祖先が一致する文字列の情報も持つ.
 3. PMA(パターンマッチングオートマトン)の完成！
 */
-// https://github.com/Suikaba/procon-lib/blob/master/string/aho_corasick.hpp
-// verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3954111
+
 // 出現文字
 struct characters {
   // lower alphabets
