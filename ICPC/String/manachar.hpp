@@ -1,5 +1,6 @@
 #include "../bits/stdc++.h"
 // 奇数長回文のみ検出 O(|s|)
+// 偶数長回文は、sの間に'$'を挟んでmanacharして、$を中心とする部分を見ればよい
 // r[i] := s[i] を中心とする最長の回文半径
 // https://snuke.hatenablog.com/entry/2014/12/02/235837
 std::vector<int> manachar(const std::string &s) {
