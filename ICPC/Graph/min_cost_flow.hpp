@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include "../bits/stdc++.h"
 using namespace std;
 
 struct MinCostFlow{
@@ -14,8 +14,8 @@ struct MinCostFlow{
     MinCostFlow(int n):n(n),g(n),h(n),dist(n),prevv(n),preve(n){}
 
     void add_edge(int from,int to,flow_t cap,cost_t cost){
-        g[from].push_back((Edge){to,cap,cost,(int)g[to].size()});
-        g[to].push_back((Edge){from,0,-cost,(int)g[from].size()-1});
+        g[from].push_back(Edge{to,cap,cost,(int)g[to].size()});
+        g[to].push_back(Edge{from,0,-cost,(int)g[from].size()-1});
     }
 
     cost_t run(int s,int t,flow_t f){

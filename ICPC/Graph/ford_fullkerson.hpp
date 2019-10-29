@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include "../bits/stdc++.h"
 using namespace std;
 
 struct FordFullkerson{
@@ -11,8 +11,8 @@ struct FordFullkerson{
     FordFullkerson(int n):g(n),used(n){}
 
     void add_edge(int from,int to,flow_t cap){
-        g[from].push_back((Edge){to,cap,(int)g[to].size()});
-        g[to].push_back((Edge){from,0,(int)g[from].size()-1});
+        g[from].push_back(Edge{to,cap,(int)g[to].size()});
+        g[to].push_back(Edge{from,0,(int)g[from].size()-1});
     }
 
     flow_t dfs(int v,int t,flow_t f){
