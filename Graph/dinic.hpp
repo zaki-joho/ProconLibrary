@@ -3,92 +3,76 @@
 // 最大流(Dinic)
 // O(EV^2) (<=> Ford : O(FE))
 // verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3633135
-class Dinic
-{
-    using type = int;
-    const int INF = 1e9;
-    struct Edge
-    {
-        // 行き先, 容量, 逆辺
-        int to;
-        type cap;
-        int rev;
-        Edge(int _t, type _c, int _r) : to(_t), cap(_c), rev(_r) {}
-    };
+class Dinic {
+  using type = int;
+  const int INF = 1e9;
+  struct Edge {
+    // 行き先, 容量, 逆辺
+    int to;
+    type cap;
+    int rev;
+    Edge(int _t, type _c, int _r) : to(_t), cap(_c), rev(_r) {}
+  };
 
-    using Graph = std::vector<std::vector<Edge>>;
-    int V;
-    Graph G;
-    // s からの最短距離
-    std::vector<int> level;
-    // 訪問済みか
-    std::vector<int> iter;
+  using Graph = std::vector<std::vector<Edge>>;
+  int V;
+  Graph G;
+  // s からの最短距離
+  std::vector<int> level;
+  // 訪問済みか
+  std::vector<int> iter;
 
-    void bfs(int s)
-    {
-        fill(level.begin(), level.end(), -1);
-        std::queue<int> que;
-        level[s] = 0;
-        que.push(s);
-        while (!que.empty())
-        {
-            int v = que.front();
-            que.pop();
-            for (const auto &e : G[v])
-            {
-                if (e.cap > 0 && level[e.to] < 0)
-                {
-                    level[e.to] = level[v] + 1;
-                    que.push(e.to);
-                }
-            }
+  void bfs(int s) {
+    fill(level.begin(), level.end(), -1);
+    std::queue<int> que;
+    level[s] = 0;
+    que.push(s);
+    while (!que.empty()) {
+      int v = que.front();
+      que.pop();
+      for (const auto &e : G[v]) {
+        if (e.cap > 0 && level[e.to] < 0) {
+          level[e.to] = level[v] + 1;
+          que.push(e.to);
         }
+      }
     }
-    // 増加パスを探す
-    type dfs(int v, int t, type f)
-    {
-        if (v == t)
-            return f;
-        for (int &i = iter[v]; i < (int)G[v].size(); i++)
-        {
-            Edge &e = G[v][i];
-            if (e.cap > 0 && level[v] < level[e.to])
-            {
-                type d = dfs(e.to, t, std::min(f, e.cap));
-                if (d > 0)
-                {
-                    e.cap -= d;
-                    G[e.to][e.rev].cap += d;
-                    return d;
-                }
-            }
+  }
+  // 増加パスを探す
+  type dfs(int v, int t, type f) {
+    if (v == t) return f;
+    for (int &i = iter[v]; i < (int)G[v].size(); i++) {
+      Edge &e = G[v][i];
+      if (e.cap > 0 && level[v] < level[e.to]) {
+        type d = dfs(e.to, t, std::min(f, e.cap));
+        if (d > 0) {
+          e.cap -= d;
+          G[e.to][e.rev].cap += d;
+          return d;
         }
-        return 0;
+      }
     }
+    return 0;
+  }
 
-  public:
-    Dinic(int _v) : V(_v), G(_v), level(_v), iter(_v) {}
-    void add(int from, int to, type cap)
-    {
-        G[from].push_back(Edge{to, cap, (int)G[to].size()});
-        G[to].push_back(Edge{from, 0, (int)G[from].size() - 1});
+ public:
+  Dinic(int _v) : V(_v), G(_v), level(_v), iter(_v) {}
+  void add(int from, int to, type cap) {
+    G[from].push_back(Edge{to, cap, (int)G[to].size()});
+    G[to].push_back(Edge{from, 0, (int)G[from].size() - 1});
+  }
+  type maxFlow(int s, int t) {
+    type ret = 0;
+    while (true) {
+      bfs(s);
+      if (level[t] < 0) return ret;
+      fill(iter.begin(), iter.end(), 0);
+      type f;
+      while ((f = dfs(s, t, INF)) > 0) {
+        ret += f;
+      }
     }
-    type maxFlow(int s, int t)
-    {
-        type ret = 0;
-        while (true)
-        {
-            bfs(s);
-            if (level[t] < 0)
-                return ret;
-            fill(iter.begin(), iter.end(), 0);
-            type f;
-            while ((f = dfs(s, t, INF)) > 0)
-            {
-                ret += f;
-            }
-        }
-    }
+  }
 };
 
 /*
