@@ -10,8 +10,8 @@ int main() {
   string s = p + "@" + t;
   auto a = kmp(s);
   vector<int> ans;
-  for (int i = p.size() + 1; i < s.size(); ++i) {
-    if (a[i] >= p.size()) ans.push_back(i - p.size() - p.size());
+  for (int i = (int)p.size() + 1; i < (int)s.size(); ++i) {
+    if (a[i] >= (int)p.size()) ans.push_back(i - p.size() - p.size());
   }
   for (auto b : ans) {
     cout << b << endl;

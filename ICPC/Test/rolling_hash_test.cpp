@@ -13,7 +13,6 @@ int main() {
   string t, p;
   cin >> t >> p;
   RollingHash h(t);
-  using ull = uint64_t;
   RollingHash hp(p);
   auto a = hp.query(0, p.size());
   vector<int> ans;

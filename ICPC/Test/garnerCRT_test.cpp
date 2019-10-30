@@ -60,7 +60,6 @@ int main(){
         cout<<res<<endl;
         return 0;
     }
-    ll ret = crt(b,m);
     cout<<crt(b,m)<<endl;
     return 0;
 }

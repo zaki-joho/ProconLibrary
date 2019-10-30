@@ -30,7 +30,7 @@ struct MinCostFlow{
                 auto tmp = que.top(); que.pop();
                 int v = tmp.second;
                 if(dist[v]<tmp.first) continue;
-                for(int i=0;i<g[v].size();i++){
+                for(int i=0;i<(int)g[v].size();i++){
                     Edge& e=g[v][i];
                     cost_t d = dist[v]+e.cost+h[v]-h[e.to];
                     if(e.cap>0 && dist[e.to]>d){
