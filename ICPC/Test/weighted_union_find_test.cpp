@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3959917
 int main() {
   int n, q;
   cin >> n >> q;
