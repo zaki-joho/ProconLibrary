@@ -7,6 +7,7 @@ using ll = long long;
 ll h, w, n;
 int cs = 1;
 
+// verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3959907
 int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
