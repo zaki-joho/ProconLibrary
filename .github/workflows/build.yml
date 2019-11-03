@@ -9,6 +9,8 @@ jobs:
       - run: g++ --version
       - run: cd ICPC/ && bash script/gen.sh
       - run: pwd
-      - run: cd ICPC
+      - run: cd ICPC/
+      - run: pwd
+      - run: cd ICPC/ && ls -la
       - run: ls -la
       - run: bash script/compile.sh
