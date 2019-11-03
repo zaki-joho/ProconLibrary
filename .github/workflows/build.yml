@@ -8,4 +8,5 @@ jobs:
       - uses: actions/checkout@v1.0.0
       - run: g++ --version
       - run: cd ICPC/ && bash script/compile.sh
-      - run: bash script/gen.sh
+      - run: cd ../
+      - run: cd ICPC/ && bash script/gen.sh
