@@ -5,21 +5,17 @@
  */
 // verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3385735
 template <typename T>
-class SlideMinimum
-{
-    // (位置, 値)
-    std::deque<std::pair<int, T>> deq;
-    int pos, window;
+class SlideMinimum {
+  // (位置, 値)
+  std::deque<std::pair<int, T>> deq;
+  int pos, window;
 
-  public:
-    SlideMinimum(int _w) : pos(0), window(_w) {}
-    T query(T val)
-    {
-        while (!deq.empty() && deq.front().first <= pos - window)
-            deq.pop_front();
-        while (!deq.empty() && deq.back().second >= val)
-            deq.pop_back();
-        deq.push_back(std::make_pair(pos++, val));
-        return deq.front().second;
-    }
+ public:
+  SlideMinimum(int _w) : pos(0), window(_w) {}
+  T query(T val) {
+    while (!deq.empty() && deq.front().first <= pos - window) deq.pop_front();
+    while (!deq.empty() && deq.back().second >= val) deq.pop_back();
+    deq.push_back(std::make_pair(pos++, val));
+    return deq.front().second;
+  }
 };

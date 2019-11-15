@@ -41,17 +41,14 @@ constexpr int INF = numeric_limits<int>::max() / 2;
 constexpr int MOD = 1e9 + 7;
 
 template <typename T>
-void printv(const vector<T> &v)
-{
-    int sz = v.size();
-    for (int i = 0; i < sz; i++)
-    {
-        cout << v[i] << " \n"[i == sz - 1];
-    }
+void printv(const vector<T> &v) {
+  int sz = v.size();
+  for (int i = 0; i < sz; i++) {
+    cout << v[i] << " \n"[i == sz - 1];
+  }
 }
 
-int main()
-{
-    cin.tie(0);
-    ios::sync_with_stdio(false);
+int main() {
+  cin.tie(0);
+  ios::sync_with_stdio(false);
 }

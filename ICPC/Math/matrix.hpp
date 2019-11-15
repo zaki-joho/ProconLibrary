@@ -57,14 +57,13 @@ type det(Mat mat){
 
 
 int rank(Mat mat){
-    int m = mat.size(), n = mat[0].size();
     return sweep(mat).size();
 }
 
 // return an answer of [mat*x=vec]
 Vec linearEq(Mat mat,Vec vec){
-    int m =mat.size(),n=mat[0].size();
-    for(int i=0;i<mat.size();i++) mat[i].push_back(vec[i]);
+    int n=mat[0].size();
+    for(int i=0;i<(int)mat.size();i++) mat[i].push_back(vec[i]);
     auto ids=sweep(mat);
     if(ids.back()==n) return {};
     Vec res(n);

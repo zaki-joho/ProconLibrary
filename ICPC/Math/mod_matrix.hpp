@@ -1,5 +1,4 @@
 #include "../bits/stdc++.h"
-// verified: http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3613584#1
 
 template <typename T>
 using matrix = std::vector<std::vector<T>>;

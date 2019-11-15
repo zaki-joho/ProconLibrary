@@ -73,7 +73,7 @@ private:
 		{
 			if (flagMin)
 				a = -a, b = -b;
-			auto &&it = insert({a, b});
+			auto &&it = insert(Line{a, b});
 			it->getSuc = [=] { return (std::next(it) == end() ? nullptr : &*std::next(it)); };
 			if (isBad(it))
 			{
