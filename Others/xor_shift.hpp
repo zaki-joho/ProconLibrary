@@ -11,8 +11,8 @@ struct XorShift {
     y = (w >> 9) ^ (x << 6);
     z = y >> 7;
   }
-  static const result_type min() { return 0; }
-  static const result_type max() { return 0x7FFFFFFF; }
+  static constexpr result_type min() { return 0; }
+  static constexpr result_type max() { return 0x7FFFFFFF; }
   result_type operator()() {
     result_type t = x ^ (x << 11);
     x = y;
@@ -34,12 +34,5 @@ struct XorShift {
   // [min,max] の浮動小数点乱数
   double randDouble(double min = 0, double max = 1) {
     return (double)(rand() % 0xFFFF) / 0xFFFF * (max - min) + min;
-  }
-  // 変数をデフォルト値に設定する
-  void SetDefault() {
-    w = 123456789;
-    x = 362436069;
-    y = 521288629;
-    z = 88675123;
   }
 };
