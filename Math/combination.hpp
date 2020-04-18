@@ -1,15 +1,15 @@
 #include "../bits/stdc++.h"
-const int MOD = 1e9 + 7;
+const int mod = 1e9 + 7;
 
 // a^b O(log b)
-template <typename T>
-T mypow(T a, T b) {
+using ll = long long;
+ll mypow(ll a, ll b) {
   if (b == 0) return 1;
-  T tmp = mypow(a, b / 2);
+  ll tmp = mypow(a, b / 2);
   if (b % 2)
-    return (((tmp * tmp) % MOD) * a) % MOD;
+    return (((tmp * tmp) % mod) * a) % mod;
   else
-    return (tmp * tmp) % MOD;
+    return (tmp * tmp) % mod;
 }
 
 // nCk O(n + klogMOD)
